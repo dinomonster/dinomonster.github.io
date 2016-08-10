@@ -199,24 +199,4 @@
     
   </entry>
   
-  <entry>
-    <title>This is my First Blog.</title>
-    <link href="http://yoursite.com/2016/08/05/hello-world/"/>
-    <id>http://yoursite.com/2016/08/05/hello-world/</id>
-    <published>2016-08-05T03:05:57.234Z</published>
-    <updated>2016-08-05T07:04:22.805Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to my blog.This is a private blog by Dino.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to my blog.This is a private blog by Dino.&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
-  
 </feed>
