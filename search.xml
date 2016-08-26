@@ -4,6 +4,13 @@
   
     
     <entry>
+      <title><![CDATA[制作gif]]></title>
+      <url>https://dinomonster.github.io/2016/08/26/%E5%88%B6%E4%BD%9Cgif/</url>
+      <content type="html"><![CDATA[<p>&#x770B;&#x5230;github&#x4E0A;&#x6F14;&#x793A;&#x6548;&#x679C;&#x90FD;&#x7528;&#x7684;gif&#xFF0C;&#x6211;&#x4E5F;&#x53BB;&#x7F51;&#x4E0A;&#x627E;&#x4E86;&#x5F88;&#x591A;&#x65B9;&#x6CD5;&#xFF0C;&#x683C;&#x5F0F;&#x5DE5;&#x5382;&#x4E4B;&#x7C7B;&#x7684;&#x90FD;&#x662F;&#x89C6;&#x9891;&#x8F6C;gif&#xFF0C;&#x4F7F;&#x7528;&#x8D77;&#x6765;&#x611F;&#x89C9;&#x6548;&#x679C;&#x5F88;&#x5DEE;&#xFF0C;&#x8FD8;&#x6709;&#x8F6C;&#x6362;&#x5931;&#x8D25;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8F6C;&#x51FA;&#x6765;&#x7684;&#x6BD4;&#x539F;&#x89C6;&#x9891;&#x8FD8;&#x5927;&#x3002;<br>&#x6700;&#x540E;&#x627E;&#x5230;&#x4E00;&#x6B3E;&#x7092;&#x9E21;&#x597D;&#x7528;&#x7684;&#x8F6F;&#x4EF6;&#xFF0C;<br><a href="http://www.cockos.com/licecap/" title="LICEcap" target="_blank" rel="external">http://www.cockos.com/licecap/</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[实现自定义banner]]></title>
       <url>https://dinomonster.github.io/2016/08/25/%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89banner/</url>
       <content type="html"><![CDATA[<p>&#x8981;&#x505A;&#x4E00;&#x4E2A;&#x4E0D;&#x505C;&#x6EDA;&#x52A8;&#x7684;&#x901A;&#x77E5;&#xFF0C;&#x7C7B;&#x4F3C;banner&#xFF0C;&#x7531;&#x4E8E;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x6CA1;&#x6709;&#x7528;banner&#x7684;&#x6846;&#x67B6;&#xFF0C;&#x81EA;&#x5DF1;&#x7B80;&#x5355;&#x5B9E;&#x73B0;&#x5C01;&#x88C5;&#x4E86;&#x4E0B;&#xFF0C;&#x6700;&#x5F00;&#x59CB;&#x7528;&#x7684;TimerTask&#xFF0C;&#x4E00;&#x5F00;&#x59CB;&#x7528;&#x7684;&#x633A;&#x6B63;&#x5E38;&#x7684;&#xFF0C;&#x53EF;&#x662F;&#x653E;&#x7F6E;&#x65F6;&#x95F4;&#x4E45;&#x4E86;&#x540E;&#x540E;&#x754C;&#x9762;&#x5C31;&#x4E71;&#x4E86;&#x3002;&#x3002;&#x3002;&#x4E8E;&#x662F;&#x770B;&#x4E86;&#x4E0B;&#x5F00;&#x6E90;banner&#x6846;&#x67B6;&#x7684;&#x6E90;&#x7801;&#xFF0C;&#x522B;&#x4EBA;&#x7528;Handler postDelayed&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x3002;&#x3002;&#x4E8E;&#x662F;&#x6539;&#x6539;&#x6539;&#xFF0C;&#x6D4B;&#x8BD5;&#x4E86;&#x4E0B;&#x6B63;&#x5E38;&#x4E86;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x7EBF;&#x7A0B;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6682;&#x65F6;&#x8FD8;&#x4E0D;&#x660E;&#x767D;&#x5177;&#x4F53;&#x539F;&#x56E0;&#x3002;</p>

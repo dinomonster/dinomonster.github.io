@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dinomonster.github.io/"/>
-  <updated>2016-08-26T01:42:31.478Z</updated>
+  <updated>2016-08-26T02:18:29.250Z</updated>
   <id>https://dinomonster.github.io/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>制作gif</title>
+    <link href="https://dinomonster.github.io/2016/08/26/%E5%88%B6%E4%BD%9Cgif/"/>
+    <id>https://dinomonster.github.io/2016/08/26/制作gif/</id>
+    <published>2016-08-26T02:13:03.000Z</published>
+    <updated>2016-08-26T02:18:29.250Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x770B;&#x5230;github&#x4E0A;&#x6F14;&#x793A;&#x6548;&#x679C;&#x90FD;&#x7528;&#x7684;gif&#xFF0C;&#x6211;&#x4E5F;&#x53BB;&#x7F51;&#x4E0A;&#x627E;&#x4E86;&#x5F88;&#x591A;&#x65B9;&#x6CD5;&#xFF0C;&#x683C;&#x5F0F;&#x5DE5;&#x5382;&#x4E4B;&#x7C7B;&#x7684;&#x90FD;&#x662F;&#x89C6;&#x9891;&#x8F6C;gif&#xFF0C;&#x4F7F;&#x7528;&#x8D77;&#x6765;&#x611F;&#x89C9;&#x6548;&#x679C;&#x5F88;&#x5DEE;&#xFF0C;&#x8FD8;&#x6709;&#x8F6C;&#x6362;&#x5931;&#x8D25;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8F6C;&#x51FA;&#x6765;&#x7684;&#x6BD4;&#x539F;&#x89C6;&#x9891;&#x8FD8;&#x5927;&#x3002;<br>&#x6700;&#x540E;&#x627E;&#x5230;&#x4E00;&#x6B3E;&#x7092;&#x9E21;&#x597D;&#x7528;&#x7684;&#x8F6F;&#x4EF6;&#xFF0C;<br><a href="http://www.cockos.com/licecap/" title="LICEcap" target="_blank" rel="external">http://www.cockos.com/licecap/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x770B;&amp;#x5230;github&amp;#x4E0A;&amp;#x6F14;&amp;#x793A;&amp;#x6548;&amp;#x679C;&amp;#x90FD;&amp;#x7528;&amp;#x7684;gif&amp;#xFF0C;&amp;#x6211;&amp;#x4E5F;&amp;#x53BB;&amp;#x7F51;&amp;#x4E0A;
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="https://dinomonster.github.io/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
   
   <entry>
     <title>实现自定义banner</title>
