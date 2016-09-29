@@ -270,6 +270,121 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/15/使用drawable来实现圆形按钮以及点击效果/" itemprop="url">
+                  使用drawable来实现圆形按钮以及点击效果
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-15T20:20:13+08:00" content="2016-08-15">
+              2016-08-15
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/15/使用drawable来实现圆形按钮以及点击效果/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/15/使用drawable来实现圆形按钮以及点击效果/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/15/使用drawable来实现圆形按钮以及点击效果/" class="leancloud_visitors" data-flag-title="使用drawable来实现圆形按钮以及点击效果">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&#x4ECA;&#x5929;&#x8981;&#x505A;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x5F55;&#x5236;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5F55;&#x5236;&#x7684;&#x6309;&#x94AE;&#x8981;&#x548C;ios&#x7684;&#x4E00;&#x81F4;&#xFF0C;&#x89C9;&#x5F97;&#x7528;drawable&#x5B9E;&#x73B0;&#x66F4;&#x7B80;&#x5355;&#xFF0C;&#x4E0B;&#x9762;&#x5148;&#x770B;&#x770B;&#x6548;&#x679C;<br><img src="/2016/08/15/&#x4F7F;&#x7528;drawable&#x6765;&#x5B9E;&#x73B0;&#x5706;&#x5F62;&#x6309;&#x94AE;&#x4EE5;&#x53CA;&#x70B9;&#x51FB;&#x6548;&#x679C;/btn_normal.jpg" alt="btn_normal"><br><img src="/2016/08/15/&#x4F7F;&#x7528;drawable&#x6765;&#x5B9E;&#x73B0;&#x5706;&#x5F62;&#x6309;&#x94AE;&#x4EE5;&#x53CA;&#x70B9;&#x51FB;&#x6548;&#x679C;/btn_click.jpg" alt="btn_click"></p>
+<h3 id="1-&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;record-normal-shape-xml"><a href="#1-&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;record-normal-shape-xml" class="headerlink" title="1.&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;record_normal_shape.xml"></a>1.&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;record_normal_shape.xml</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;</div><div class="line">    &lt;item&gt;</div><div class="line">        &lt;shape android:shape=&quot;oval&quot; &gt;</div><div class="line">            &lt;solid</div><div class="line">                android:color=&quot;@color/white&quot;/&gt;</div><div class="line">            &lt;size android:width=&quot;20dp&quot;</div><div class="line">            android:height=&quot;20dp&quot;/&gt;</div><div class="line">        &lt;/shape&gt;</div><div class="line">    &lt;/item&gt;</div><div class="line"></div><div class="line">    &lt;item android:bottom=&quot;2dp&quot;</div><div class="line">        android:top=&quot;2dp&quot;</div><div class="line">        android:left=&quot;2dp&quot;</div><div class="line">        android:right=&quot;2dp&quot;&gt;</div><div class="line">        &lt;shape android:shape=&quot;oval&quot; &gt;</div><div class="line">            &lt;solid</div><div class="line">                android:color=&quot;@color/black&quot;/&gt;</div><div class="line">            &lt;size android:width=&quot;20dp&quot;</div><div class="line">                android:height=&quot;20dp&quot;/&gt;</div><div class="line">        &lt;/shape&gt;</div><div class="line">    &lt;/item&gt;</div><div class="line"></div><div class="line">    &lt;item android:bottom=&quot;4dp&quot;</div><div class="line">        android:top=&quot;4dp&quot;</div><div class="line">        android:left=&quot;4dp&quot;</div><div class="line">        android:right=&quot;4dp&quot;&gt;</div><div class="line">        &lt;shape android:shape=&quot;oval&quot; &gt;</div><div class="line">            &lt;solid</div><div class="line">                android:color=&quot;@color/white&quot;/&gt;</div><div class="line">            &lt;size android:width=&quot;20dp&quot;</div><div class="line">                android:height=&quot;20dp&quot;/&gt;</div><div class="line">        &lt;/shape&gt;</div><div class="line">    &lt;/item&gt;</div><div class="line">&lt;/layer-list&gt;</div></pre></td></tr></table></figure>
+<h3 id="2-&#x65B0;&#x5EFA;record-click-shape-xml"><a href="#2-&#x65B0;&#x5EFA;record-click-shape-xml" class="headerlink" title="2.&#x65B0;&#x5EFA;record_click_shape.xml"></a>2.&#x65B0;&#x5EFA;record_click_shape.xml</h3><p>&#x4EE3;&#x7801;&#x57FA;&#x672C;&#x548C;&#x4E0A;&#x9762;&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x662F;&#x989C;&#x8272;&#x7531;&#x767D;&#x8272;&#x53D8;&#x4E3A;&#x7EA2;&#x8272;<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;</div><div class="line">    &lt;item&gt;</div><div class="line">        &lt;shape android:shape=&quot;oval&quot; &gt;</div><div class="line">            &lt;solid</div><div class="line">                android:color=&quot;@color/white&quot;/&gt;</div><div class="line">            &lt;size android:width=&quot;20dp&quot;</div><div class="line">            android:height=&quot;20dp&quot;/&gt;</div><div class="line">        &lt;/shape&gt;</div><div class="line">    &lt;/item&gt;</div><div class="line"></div><div class="line">    &lt;item android:bottom=&quot;2dp&quot;</div><div class="line">        android:top=&quot;2dp&quot;</div><div class="line">        android:left=&quot;2dp&quot;</div><div class="line">        android:right=&quot;2dp&quot;&gt;</div><div class="line">        &lt;shape android:shape=&quot;oval&quot; &gt;</div><div class="line">            &lt;solid</div><div class="line">                android:color=&quot;@color/black&quot;/&gt;</div><div class="line">            &lt;size android:width=&quot;20dp&quot;</div><div class="line">                android:height=&quot;20dp&quot;/&gt;</div><div class="line">        &lt;/shape&gt;</div><div class="line">    &lt;/item&gt;</div><div class="line"></div><div class="line">    &lt;item android:bottom=&quot;4dp&quot;</div><div class="line">        android:top=&quot;4dp&quot;</div><div class="line">        android:left=&quot;4dp&quot;</div><div class="line">        android:right=&quot;4dp&quot;&gt;</div><div class="line">        &lt;shape android:shape=&quot;oval&quot; &gt;</div><div class="line">            &lt;solid</div><div class="line">                android:color=&quot;@color/red&quot;/&gt;</div><div class="line">            &lt;size android:width=&quot;20dp&quot;</div><div class="line">                android:height=&quot;20dp&quot;/&gt;</div><div class="line">        &lt;/shape&gt;</div><div class="line">    &lt;/item&gt;</div><div class="line">&lt;/layer-list&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="3-&#x65B0;&#x5EFA;record-statue-selector-xml"><a href="#3-&#x65B0;&#x5EFA;record-statue-selector-xml" class="headerlink" title="3.&#x65B0;&#x5EFA;record_statue_selector.xml"></a>3.&#x65B0;&#x5EFA;record_statue_selector.xml</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</div><div class="line"></div><div class="line">    &lt;item android:drawable=&quot;@drawable/record_click_shape&quot; android:state_focused=&quot;true&quot;/&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/record_click_shape&quot; android:state_pressed=&quot;true&quot;/&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/record_click_shape&quot; android:state_selected=&quot;true&quot;/&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/record_normal_shape&quot;/&gt;</div><div class="line"></div><div class="line">&lt;/selector&gt;</div></pre></td></tr></table></figure>
+<h3 id="4-&#x76F4;&#x63A5;&#x5728;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;background&#x65E2;&#x53EF;"><a href="#4-&#x76F4;&#x63A5;&#x5728;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;background&#x65E2;&#x53EF;" class="headerlink" title="4.&#x76F4;&#x63A5;&#x5728;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;background&#x65E2;&#x53EF;"></a>4.&#x76F4;&#x63A5;&#x5728;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;background&#x65E2;&#x53EF;</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;ImageButton</div><div class="line">                android:id=<span class="string">&quot;@id/btn_recorder_record&quot;</span></div><div class="line">                android:layout_width=<span class="string">&quot;70dp&quot;</span></div><div class="line">                android:layout_height=<span class="string">&quot;70dp&quot;</span></div><div class="line">                android:layout_centerInParent=<span class="string">&quot;true&quot;</span></div><div class="line">                android:background=<span class="string">&quot;@drawable/record_statue_selecter&quot;</span> /&gt;</div></pre></td></tr></table></figure>
+<p>&#x5B9E;&#x73B0;&#x8D77;&#x6765;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4E0D;&#x4F46;&#x53EF;&#x4EE5;&#x753B;&#x51FA;&#x5706;&#x5F62;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x753B;&#x77E9;&#x5F62;&#xFF0C;&#x76F4;&#x7EBF;&#xFF0C;&#x73AF;&#x5F62;&#xFF0C;&#x692D;&#x5706;&#x3002;&#x4EE5;&#x53CA;&#x8BBE;&#x7F6E;&#x5706;&#x89D2;&#xFF0C;&#x8FB9;&#x7EBF;&#x7B49;&#x7B49;&#x3002;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/09/Android读取json配置/" itemprop="url">
                   Android读取json配置
                 </a>
@@ -834,7 +949,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
