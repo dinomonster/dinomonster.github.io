@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>https://dinomonster.github.io/2016/10/06/vector%E5%8A%A8%E7%94%BB%E4%BB%A5%E5%8F%8A%E5%85%BC%E5%AE%B9/</loc>
+    <lastmod>2016-10-06T08:54:02.517Z</lastmod>
+    <data>
+        <display>
+        <title>vector动画以及兼容</title>
+        <pubTime>2016-10-06T08:32:01.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/08/05/2016-08-05/</loc>
+    <lastmod>2016-10-06T08:51:46.118Z</lastmod>
+    <data>
+        <display>
+        <title>如何用hexo搭建静态博客</title>
+        <pubTime>2016-08-05T07:16:19.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://dinomonster.github.io/2016/09/29/Android%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Vector-%E7%9F%A2%E9%87%8F%E5%9B%BE-%E5%85%BC%E5%AE%B9%E6%97%A7%E7%89%88%E6%9C%AC/</loc>
     <lastmod>2016-09-29T07:42:57.402Z</lastmod>
     <data>
@@ -148,23 +182,6 @@
         <display>
         <title>如何使用markdown插入图片</title>
         <pubTime>2016-08-08T02:37:51.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dinomonster.github.io/2016/08/05/2016-08-05/</loc>
-    <lastmod>2016-08-08T03:47:23.881Z</lastmod>
-    <data>
-        <display>
-        <title>如何用hexo搭建静态博客</title>
-        <pubTime>2016-08-05T07:16:19.000Z</pubTime>
         
         <tag>Hexo</tag>
          
