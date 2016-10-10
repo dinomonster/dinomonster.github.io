@@ -92,7 +92,7 @@ feed:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: 
   type: git
-  repository: git@github.com:dinomonster/dinomonster.github.io.git
+  repository: https://github.com/dinomonster/dinomonster.github.io.git
   branch: master
 
 
