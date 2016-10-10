@@ -1,5 +1,5 @@
 ---
-title: vector动画以及兼容sssss
+title: vector动画以及兼容
 date: 2016-10-06 16:32:01
 tags: Android
 ---
