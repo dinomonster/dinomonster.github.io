@@ -83,7 +83,7 @@ Drawable animation = imageView.getDrawable();
 ```
 
 完整代码可以可以查看[github](https://github.com/dinomonster/VectorsTest "github")
-http://inloop.github.io/svg2android/
+
 附上两个图标库
 [iconfont](http://www.iconfont.cn/ "iconfont")
 [easyicon](http://www.easyicon.net/ "easyicon")
