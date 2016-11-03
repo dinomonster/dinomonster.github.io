@@ -1,7 +1,7 @@
 ---
 title: Android如何使用Vector(矢量图)以及兼容旧版本
 date: 2016-09-29 12:06:07
-tags: Android
+tags: [Android,Vector]
 ---
 
 这段时间忙成狗，天天加班，昨天凌晨一点多下班，都没时间写东西了，今天中午抽个空记录下Vector兼容旧版本的问题

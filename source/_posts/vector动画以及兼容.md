@@ -1,7 +1,7 @@
 ---
 title: vector动画以及兼容
 date: 2016-10-06 16:32:01
-tags: Android
+tags: [Android,Vector]
 ---
 
 ### 之前讲过了用静态的Vector，这里讲一下使用动画，这里就直接使用支持包了
