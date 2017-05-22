@@ -1,0 +1,995 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google2043cde1f559beda.html" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Android6.0&amp;#x4EE5;&amp;#x524D;&amp;#x6240;&amp;#x6709;&amp;#x6743;&amp;#x9650;&amp;#x90FD;&amp;#x5728;&amp;#x5B89;&amp;#x88C5;&amp;#x5E94;&amp;#x7528;&amp;#x65F6;&amp;#x663E;&amp;#x793A;&amp;#x7ED9;&amp;#x7528;&amp;#x6237;&amp;#xFF0C;&amp;#x7528;&amp;#x6237;&amp;#x9009;&amp;#x62E9;&amp;#x5B8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android6.0权限机制变更">
+<meta property="og:url" content="https://dinomonster.github.io/2016/08/09/2016-8-9/index.html">
+<meta property="og:site_name" content="Dino's blog">
+<meta property="og:description" content="Android6.0&amp;#x4EE5;&amp;#x524D;&amp;#x6240;&amp;#x6709;&amp;#x6743;&amp;#x9650;&amp;#x90FD;&amp;#x5728;&amp;#x5B89;&amp;#x88C5;&amp;#x5E94;&amp;#x7528;&amp;#x65F6;&amp;#x663E;&amp;#x793A;&amp;#x7ED9;&amp;#x7528;&amp;#x6237;&amp;#xFF0C;&amp;#x7528;&amp;#x6237;&amp;#x9009;&amp;#x62E9;&amp;#x5B8">
+<meta property="og:updated_time" content="2017-05-21T09:31:43.626Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android6.0权限机制变更">
+<meta name="twitter:description" content="Android6.0&amp;#x4EE5;&amp;#x524D;&amp;#x6240;&amp;#x6709;&amp;#x6743;&amp;#x9650;&amp;#x90FD;&amp;#x5728;&amp;#x5B89;&amp;#x88C5;&amp;#x5E94;&amp;#x7528;&amp;#x65F6;&amp;#x663E;&amp;#x793A;&amp;#x7ED9;&amp;#x7528;&amp;#x6237;&amp;#xFF0C;&amp;#x7528;&amp;#x6237;&amp;#x9009;&amp;#x62E9;&amp;#x5B8">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://dinomonster.github.io/2016/08/09/2016-8-9/"/>
+
+  <title> Android6.0权限机制变更 | Dino's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Dino's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Life is made up of small pleasures</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android6.0权限机制变更
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-09T09:56:28+08:00" content="2016-08-09">
+              2016-08-09
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/09/2016-8-9/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/09/2016-8-9/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/09/2016-8-9/" class="leancloud_visitors" data-flag-title="Android6.0权限机制变更">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Android6-0&#x4EE5;&#x524D;"><a href="#Android6-0&#x4EE5;&#x524D;" class="headerlink" title="Android6.0&#x4EE5;&#x524D;"></a>Android6.0&#x4EE5;&#x524D;</h3><p>&#x6240;&#x6709;&#x6743;&#x9650;&#x90FD;&#x5728;&#x5B89;&#x88C5;&#x5E94;&#x7528;&#x65F6;&#x663E;&#x793A;&#x7ED9;&#x7528;&#x6237;&#xFF0C;&#x7528;&#x6237;&#x9009;&#x62E9;&#x5B89;&#x88C5;&#x5219;&#x8868;&#x793A;&#x63A5;&#x53D7;&#x8FD9;&#x4E9B;&#x6743;&#x9650;&#xFF0C;&#x4E4B;&#x540E;&#x65E0;&#x6CD5;&#x64A4;&#x9500;&#x6388;&#x6743;&#x3002;</p>
+<h3 id="Android6-0&#x5F00;&#x59CB;"><a href="#Android6-0&#x5F00;&#x59CB;" class="headerlink" title="Android6.0&#x5F00;&#x59CB;"></a>Android6.0&#x5F00;&#x59CB;</h3><p>&#x5728;&#x5B89;&#x88C5;&#x5E94;&#x7528;&#x65F6;&#xFF0C;&#x90E8;&#x5206;&#x5371;&#x9669;&#x6743;&#x9650;&#x4F1A;&#x5C55;&#x793A;&#x7ED9;&#x7528;&#x6237;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E0D;&#x52FE;&#x9009;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x9009;&#x62E9;&#x6388;&#x6743;&#xFF0C;&#x5E76;&#x53EF;&#x4EE5;&#x5728;&#x5B89;&#x88C5;&#x4E4B;&#x540E;&#x8FDB;&#x5165;&#x8BBE;&#x7F6E;&#x64A4;&#x9500;&#x6388;&#x6743;&#x3002;<br>Dangerous permissions:</p>
+<ul>
+<li>CALENDAR<ul>
+<li>READ_CALENDAR</li>
+<li>WRITE_CALENDAR</li>
+</ul>
+</li>
+<li>CAMERA<ul>
+<li>READ_CALENDAR</li>
+<li>WRITE_CALENDAR</li>
+</ul>
+</li>
+<li>CONTACTS<ul>
+<li>READ_CONTACTS</li>
+<li>WRITE_CONTACTS</li>
+<li>GET_ACCOUNTS</li>
+</ul>
+</li>
+<li>LOCATION<ul>
+<li>ACCESS_FINE_LOCATION</li>
+<li>ACCESS_COARSE_LOCATION</li>
+</ul>
+</li>
+<li>MICROPHONE<ul>
+<li>RECORD_AUDIO</li>
+</ul>
+</li>
+<li>PHONE<ul>
+<li>READ_PHONE_STATE</li>
+<li>CALL_PHONE</li>
+<li>READ_CALL_LOG</li>
+<li>WRITE_CALL_LOG</li>
+<li>ADD_VOICEMAIL</li>
+<li>USE_SIP</li>
+<li>PROCESS_OUTGOING_CALLS</li>
+</ul>
+</li>
+<li>SENSORS<ul>
+<li>BODY_SENSORS</li>
+</ul>
+</li>
+<li>SMS<ul>
+<li>SEND_SMS</li>
+<li>RECEIVE_SMS</li>
+<li>READ_SMS</li>
+<li>RECEIVE_WAP_PUSH</li>
+<li>RECEIVE_MMS</li>
+</ul>
+</li>
+<li>STORAGE<ul>
+<li>READ_EXTERNAL_STORAGE</li>
+<li>WRITE_EXTERNAL_STORAGE</li>
+</ul>
+</li>
+</ul>
+<p>&#x6743;&#x9650;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;<a href="https://developer.android.com/reference/android/Manifest.permission.html" target="_blank" rel="external">&#x67E5;&#x770B;</a></p>
+<p>&#x60F3;&#x8981;&#x67E5;&#x770B;&#x6240;&#x6709;dangerous&#x7684;&#x6743;&#x9650;, &#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x547D;&#x4EE4;:<br><code>adb shell pm list permissions -g -d</code></p>
+<p>Guides&#x91CC;&#x9762;&#x7684;&#x539F;&#x6587;:</p>
+<ul>
+<li>If the device is running Android 6.0 (API level 23) or higher, and the app&#x2019;s targetSdkVersion is 23 or higher, the app requests permissions from the user at run-time. The user can revoke the permissions at any time, so the app needs to check whether it has the permissions every time it runs. For more information about requesting permissions in your app, see the Working with System Permissions training guide.</li>
+<li>If the device is running Android 5.1 (API level 22) or lower, or the app&#x2019;s targetSdkVersion is 22 or lower, the system asks the user to grant the permissions when the user installs the app. If you add a new permission to an updated version of the app, the system asks the user to grant that permission when the user updates the app. Once the user installs the app, the only way they can revoke the permission is by uninstalling the app.</li>
+</ul>
+<p>&#x53EA;&#x6709;&#x6EE1;&#x8DB3;targetSdkVersion&#x548C;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x8BBE;&#x5907;&#x7684;&#x7248;&#x672C;&#x90FD;&#x5728;23&#x53CA;&#x4EE5;&#x4E0A;&#x7684;&#x65F6;&#x5019;,&#x624D;&#x4F1A;&#x91C7;&#x7528;&#x65B0;&#x7684;&#x52A8;&#x6001;&#x6743;&#x9650;&#x673A;&#x5236;. &#x5176;&#x4ED6;&#x60C5;&#x51B5;, &#x8DDF;&#x4E4B;&#x524D;&#x4E00;&#x6837;, &#x5728;&#x5B89;&#x88C5;&#x548C;&#x5347;&#x7EA7;&#x5E94;&#x7528;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x6388;&#x6743;&#x4E86;&#x6240;&#x6709;&#x7684;&#x6743;&#x9650;.<br>&#x5982;&#x679C;targetSdkVersion&#x5C0F;&#x4E8E;23,&#x5373;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;Android 6.0&#x53D1;&#x5E03;&#x4E4B;&#x524D;&#x5F00;&#x53D1;&#x7684;&#x5E94;&#x7528;, &#x8FD8;&#x6CA1;&#x6709;&#x517C;&#x5BB9;6.0.<br>&#x8FD9;&#x79CD;&#x5E94;&#x7528;&#x5373;&#x4FBF;&#x662F;&#x88AB;&#x88C5;&#x5728;Android 6.0&#x7684;&#x673A;&#x5668;&#x4E0A;,&#x4E5F;&#x662F;&#x91C7;&#x7528;&#x539F;&#x6765;&#x7684;&#x5B89;&#x88C5;&#x5373;&#x6388;&#x4E88;&#x6743;&#x9650;&#x903B;&#x8F91;, &#x6240;&#x6709;&#x6743;&#x9650;&#x5728;&#x5E94;&#x7528;&#x5B89;&#x88C5;&#x65F6;&#x5168;&#x90E8;&#x88AB;&#x6388;&#x6743;.<br>&#x5728;Android 6.0&#x7684;&#x8BBE;&#x5907;&#x4E0A;&#x5B89;&#x88C5;targetSdkVersion&#x5C0F;&#x4E8E;23&#x7684;&#x5E94;&#x7528;&#x4E4B;&#x540E;, &#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x7684;&#x8BBE;&#x7F6E;&#x4E2D;&#x67E5;&#x770B;,&#x53D1;&#x73B0;&#x6240;&#x6709;&#x7684;dangerous&#x6743;&#x9650;&#x72B6;&#x6001;&#x90FD;&#x662F;&#x6253;&#x5F00;.<br>&#x4F46;&#x662F;&#x7528;&#x6237;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x5728;&#x7CFB;&#x7EDF;&#x8BBE;&#x7F6E;&#x4E2D;&#x7981;&#x7528;&#x6743;&#x9650;</p>
+<p>&#x56E0;&#x4E3A;&#x6743;&#x9650;&#x52A8;&#x6001;&#x68C0;&#x67E5;&#x76F8;&#x5173;&#x7684;API&#x662F;Android 6.0&#x624D;&#x52A0;&#x5165;&#x7684;, &#x6240;&#x4EE5;minSdkVersion&#x4E0D;&#x662F;23&#x65F6;,&#x63A8;&#x8350;&#x4F7F;&#x7528;SupportLibrary&#x6765;&#x5B9E;&#x73B0;,&#x597D;&#x5904;&#x662F;: &#x7A0B;&#x5E8F;&#x91CC;&#x4E0D;&#x5FC5;&#x52A0;if&#x6765;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x7684;&#x7248;&#x672C;.support&#x7684;&#x5305;&#x5FC5;&#x987B;&#x662F;23&#x4EE5;&#x4E0A;&#x624D;&#x53EF;&#x4EE5;.</p>
+<p>&#x4E0B;&#x9762;&#x6765;&#x8BB2;&#x8BB2;&#x4EE3;&#x7801;&#x4E2D;&#x5982;&#x4F55;&#x9002;&#x914D;&#x8FD9;&#x79CD;&#x65B0;&#x7684;&#x6743;&#x9650;&#x673A;&#x5236;&#xFF1A;</p>
+<h3 id="1-&#x68C0;&#x67E5;&#x6743;&#x9650;&#x72B6;&#x6001;"><a href="#1-&#x68C0;&#x67E5;&#x6743;&#x9650;&#x72B6;&#x6001;" class="headerlink" title="1.&#x68C0;&#x67E5;&#x6743;&#x9650;&#x72B6;&#x6001;"></a>1.&#x68C0;&#x67E5;&#x6743;&#x9650;&#x72B6;&#x6001;</h3><p>&#x5982;&#x679C;&#x5728;&#x6267;&#x884C;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x4E00;&#x4E2A;dangerous permission&#xFF0C;&#x90A3;&#x4E48;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x64CD;&#x4F5C;&#x90FD;&#x5FC5;&#x987B;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x6709;&#x8FD9;&#x4E2A;&#x6743;&#x9650;&#xFF0C;&#x56E0;&#x4E3A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x66F4;&#x6539;&#x6388;&#x6743;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x6BCF;&#x6B21;&#x90FD;&#x8FDB;&#x884C;&#x68C0;&#x67E5;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x9009;&#x62E9;&#x7167;&#x7247;&#x5C31;&#x9700;&#x8981;&#x52A0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(PackageManager.PERMISSION_GRANTED == ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE)){</div><div class="line">goImageSelect();</div><div class="line">}<span class="keyword">else</span>{</div><div class="line"><span class="comment">//do not have permission</span></div><div class="line">}</div></pre></td></tr></table></figure></p>
+<h3 id="2-&#x52A8;&#x6001;&#x8BF7;&#x6C42;&#x6743;&#x9650;"><a href="#2-&#x52A8;&#x6001;&#x8BF7;&#x6C42;&#x6743;&#x9650;" class="headerlink" title="2.&#x52A8;&#x6001;&#x8BF7;&#x6C42;&#x6743;&#x9650;"></a>2.&#x52A8;&#x6001;&#x8BF7;&#x6C42;&#x6743;&#x9650;</h3><p>&#x5982;&#x679C;&#x4E0A;&#x9762;&#x7684;&#x5224;&#x65AD;&#x6CA1;&#x6709;&#x6743;&#x9650;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x7684;&#x8BF7;&#x6C42;&#x8FD9;&#x4E2A;&#x6743;&#x9650;&#xFF0C;Android&#x63D0;&#x4F9B;&#x4E86;&#x65B9;&#x6CD5;&#x6765;&#x52A8;&#x6001;&#x8BF7;&#x6C42;&#x6743;&#x9650;&#xFF0C;&#x8C03;&#x7528;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x4F1A;&#x5F39;&#x51FA;&#x6807;&#x51C6;&#x7684;dialog&#xFF0C;&#x76EE;&#x524D;&#x8FD9;&#x4E2A;dialog&#x4E0D;&#x80FD;&#x88AB;&#x5B9A;&#x5236;&#x3002;</p>
+<h4 id="2-1&#x6709;&#x65F6;&#x5019;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x89E3;&#x91CA;&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x6743;&#x9650;"><a href="#2-1&#x6709;&#x65F6;&#x5019;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x89E3;&#x91CA;&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x6743;&#x9650;" class="headerlink" title="2.1&#x6709;&#x65F6;&#x5019;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x89E3;&#x91CA;&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x6743;&#x9650;"></a>2.1&#x6709;&#x65F6;&#x5019;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x89E3;&#x91CA;&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x6743;&#x9650;</h4><p>&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x662F;,&#x5F53;&#x7528;&#x6237;&#x62D2;&#x7EDD;&#x8FC7;&#x8FD9;&#x4E2A;&#x6743;&#x9650;,&#x4F46;&#x662F;&#x53C8;&#x7528;&#x5230;&#x4E86;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;, &#x90A3;&#x4E48;&#x5F88;&#x53EF;&#x80FD;&#x7528;&#x6237;&#x4E0D;&#x662F;&#x5F88;&#x660E;&#x767D;&#x4E3A;&#x4EC0;&#x4E48;app&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x6743;&#x9650;, &#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x5148;&#x5411;&#x7528;&#x6237;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;.<br>&#x4E3A;&#x4E86;&#x53D1;&#x73B0;&#x8FD9;&#x79CD;&#x7528;&#x6237;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x89E3;&#x91CA;&#x7684;&#x60C5;&#x5F62;, Android&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x7C7B;&#x65B9;&#x6CD5;: shouldShowRequestPermissionRationale()<br>&#x5982;&#x679C;app&#x4E4B;&#x524D;&#x8BF7;&#x6C42;&#x8FC7;&#x8BE5;&#x6743;&#x9650;,&#x88AB;&#x7528;&#x6237;&#x62D2;&#x7EDD;, &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5C31;&#x4F1A;&#x8FD4;&#x56DE;true.<br>&#x5982;&#x679C;&#x7528;&#x6237;&#x4E4B;&#x524D;&#x62D2;&#x7EDD;&#x6743;&#x9650;&#x7684;&#x65F6;&#x5019;&#x52FE;&#x9009;&#x4E86;&#x5BF9;&#x8BDD;&#x6846;&#x4E2D;&#x201D;Don&#x2019;t ask again&#x201D;&#x7684;&#x9009;&#x9879;,&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;false.<br>&#x5982;&#x679C;&#x8BBE;&#x5907;&#x7B56;&#x7565;&#x7981;&#x6B62;&#x5E94;&#x7528;&#x62E5;&#x6709;&#x8FD9;&#x6761;&#x6743;&#x9650;, &#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E5F;&#x8FD4;&#x56DE;false.<br>&#x5177;&#x4F53;&#x89E3;&#x91CA;&#x539F;&#x56E0;&#x7684;&#x8FD9;&#x4E2A;dialog&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;, &#x7CFB;&#x7EDF;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//do not have permission</span></div><div class="line"><span class="comment">// Should we show an explanation?</span></div><div class="line"><span class="keyword">if</span> (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.<span class="keyword">this</span>,</div><div class="line">            Manifest.permission.READ_CONTACTS)) {</div><div class="line"></div><div class="line">        <span class="comment">// Show an explanation to the user *asynchronously* -- don&apos;t block</span></div><div class="line">        <span class="comment">// this thread waiting for the user&apos;s response! After the user</span></div><div class="line">        <span class="comment">// sees the explanation, try again to request the permission.</span></div><div class="line">        Log.i(DEBUG_TAG, <span class="string">&quot;we should explain why we need this permission!&quot;</span>);</div><div class="line">    } <span class="keyword">else</span> {</div><div class="line"></div><div class="line">        <span class="comment">// No explanation needed, we can request the permission.</span></div><div class="line">   }</div></pre></td></tr></table></figure>
+<h4 id="2-2&#x8BF7;&#x6C42;&#x6743;&#x9650;"><a href="#2-2&#x8BF7;&#x6C42;&#x6743;&#x9650;" class="headerlink" title="2.2&#x8BF7;&#x6C42;&#x6743;&#x9650;"></a>2.2&#x8BF7;&#x6C42;&#x6743;&#x9650;</h4><p>&#x8BF7;&#x6C42;&#x6743;&#x9650;&#x7684;&#x65B9;&#x6CD5;&#x5206;&#x4E24;&#x79CD;<br>&#x4E00;&#x79CD;&#x662F;&#x5728;Activity&#x91CC;&#x9762;&#x8BF7;&#x6C42;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;<br>requestPermissions(final @NonNull Activity activity,<br>            final @NonNull String[] permissions, final int requestCode)<br>&#x4F20;&#x5165;&#x4E00;&#x4E2A;Activity, &#x4E00;&#x4E2A;permission&#x540D;&#x5B57;&#x7684;&#x6570;&#x7EC4;, &#x548C;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x7684;request code.<br>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x5F02;&#x6B65;&#x7684;,&#x5B83;&#x4F1A;&#x7ACB;&#x5373;&#x8FD4;&#x56DE;, &#x5F53;&#x7528;&#x6237;&#x548C;dialog&#x4EA4;&#x4E92;&#x5B8C;&#x6210;&#x4E4B;&#x540E;,&#x7CFB;&#x7EDF;&#x4F1A;&#x8C03;&#x7528;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;,&#x4F20;&#x56DE;&#x7528;&#x6237;&#x7684;&#x9009;&#x62E9;&#x7ED3;&#x679C;&#x548C;&#x5BF9;&#x5E94;&#x7684;request code.<br>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ActivityCompat.requestPermissions(CreateMeetActivity.<span class="keyword">this</span>,<span class="keyword">new</span> String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PermissionCode.MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);</div></pre></td></tr></table></figure></p>
+<p>&#x4E00;&#x79CD;&#x662F;&#x5728;Fragment&#x91CC;&#x9762;&#x8BF7;&#x6C42;<br>requestPermissions(@NonNull String[] permissions, int requestCode)<br>&#x5C11;&#x4E00;&#x4E2A;Activity&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x4ED6;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F;&#x56DE;&#x8C03;&#x9700;&#x8981;&#x7279;&#x522B;&#x8BF4;&#x660E;&#xFF0C;&#x8FD8;&#x6709;fragment&#x5D4C;&#x5957;fragment&#x7684;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x60C5;&#x51B5;&#xFF0C;&#x4E0B;&#x9762;&#x4F1A;&#x5355;&#x72EC;&#x8BF4;&#x660E;&#x3002;</p>
+<h4 id="2-3&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x6743;&#x9650;&#x7684;&#x54CD;&#x5E94;"><a href="#2-3&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x6743;&#x9650;&#x7684;&#x54CD;&#x5E94;" class="headerlink" title="2.3&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x6743;&#x9650;&#x7684;&#x54CD;&#x5E94;"></a>2.3&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x6743;&#x9650;&#x7684;&#x54CD;&#x5E94;</h4><p>&#x5F53;&#x7528;&#x6237;&#x5BF9;&#x8BF7;&#x6C42;&#x6743;&#x9650;&#x7684;dialog&#x505A;&#x51FA;&#x54CD;&#x5E94;&#x4E4B;&#x540E;,&#x7CFB;&#x7EDF;&#x4F1A;&#x8C03;&#x7528;onRequestPermissionsResult() &#x65B9;&#x6CD5;,&#x4F20;&#x56DE;&#x7528;&#x6237;&#x7684;&#x9009;&#x62E9;&#x7ED3;&#x679C;&#x548C;request code.<br>&#x8FD9;&#x4E2A;&#x56DE;&#x8C03;&#x4E2D;request code&#x5373;&#x4E3A;&#x8C03;&#x7528;requestPermissions()&#x65F6;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;,&#x662F;app&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x503C;.<br>&#x5982;&#x679C;&#x8BF7;&#x6C42;&#x53D6;&#x6D88;,&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x7EC4;&#x5C06;&#x4F1A;&#x4E3A;&#x7A7A;.<br>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, @NonNull String[] permissions, @NonNull <span class="keyword">int</span>[] grantResults)</span> </span>{</div><div class="line">        <span class="keyword">super</span>.onRequestPermissionsResult(requestCode, permissions, grantResults);</div><div class="line">        <span class="keyword">switch</span> (requestCode) {</div><div class="line">            <span class="keyword">case</span> PermissionCode.MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE: {</div><div class="line">                <span class="comment">// If request is cancelled, the result arrays are empty.</span></div><div class="line">                <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span>&amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) {</div><div class="line"></div><div class="line">                    <span class="comment">// permission was granted, yay! Do the</span></div><div class="line">                    <span class="comment">// contacts-related task you need to do.</span></div><div class="line">                    goFileSelect();</div><div class="line">                    Log.i(TAG, <span class="string">&quot;user granted the permission!&quot;</span>);</div><div class="line"></div><div class="line">                } <span class="keyword">else</span> {</div><div class="line"></div><div class="line">                    <span class="comment">// permission denied, boo! Disable the</span></div><div class="line">                    <span class="comment">// functionality that depends on this permission.</span></div><div class="line">                    Log.i(TAG, <span class="string">&quot;user denied the permission!&quot;</span>);</div><div class="line">                }</div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            }</div><div class="line"></div><div class="line">            <span class="comment">// other &apos;case&apos; lines to check for other</span></div><div class="line">            <span class="comment">// permissions this app might request</span></div><div class="line">        }</div></pre></td></tr></table></figure></p>
+<p>&#x5728;Fragment&#x4E2D;&#x7533;&#x8BF7;&#x6743;&#x9650;&#xFF0C;&#x4E0D;&#x8981;&#x4F7F;&#x7528;ActivityCompat.requestPermissions, &#x76F4;&#x63A5;&#x4F7F;&#x7528;Fragment&#x7684;requestPermissions&#x65B9;&#x6CD5;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x56DE;&#x8C03;&#x5230;Activity&#x7684; onRequestPermissionsResult<br>&#x5982;&#x679C;&#x5728;Fragment&#x4E2D;&#x5D4C;&#x5957;Fragment&#xFF0C;&#x5728;&#x5B50;Fragment&#x4E2D;&#x4F7F;&#x7528;requestPermissions&#x65B9; &#x6CD5;&#xFF0C;onRequestPermissionsResult&#x4E0D;&#x4F1A;&#x56DE;&#x8C03;&#x56DE;&#x6765;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; getParentFragment().requestPermissions&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x56DE;&#x8C03;&#x5230;&#x7236;Fragment&#x4E2D;&#x7684;onRequestPermissionsResult&#xFF0C;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x628A;&#x56DE;&#x8C03;&#x900F;&#x4F20;&#x5230;&#x5B50;Fragment</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode, String[] permissions, <span class="keyword">int</span>[] grantResults)</span> </span>{</div><div class="line">      <span class="keyword">super</span>.onRequestPermissionsResult(requestCode, permissions, grantResults);</div><div class="line">      List&lt;Fragment&gt; fragments = getChildFragmentManager().getFragments();</div><div class="line">      <span class="keyword">if</span> (fragments != <span class="keyword">null</span>) {</div><div class="line">          <span class="keyword">for</span> (Fragment fragment : fragments) {</div><div class="line">              <span class="keyword">if</span> (fragment != <span class="keyword">null</span>) {</div><div class="line">                  fragment.onRequestPermissionsResult(requestCode,permissions,grantResults);</div><div class="line">              }</div><div class="line">          }</div><div class="line">      }</div><div class="line">  }</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/08/2016-8-8/" rel="next" title="如何使用markdown插入图片">
+                <i class="fa fa-chevron-left"></i> 如何使用markdown插入图片
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/09/Android读取json配置/" rel="prev" title="Android读取json配置">
+                Android读取json配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/09/2016-8-9/"
+           data-title="Android6.0权限机制变更" data-url="https://dinomonster.github.io/2016/08/09/2016-8-9/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Dino" />
+          <p class="site-author-name" itemprop="name">Dino</p>
+          <p class="site-description motion-element" itemprop="description">Life is made up of small pleasures.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/dinomonster" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/profile.php?id=100006608145650&fref=ts" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android6-0以前"><span class="nav-number">1.</span> <span class="nav-text">Android6.0以前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android6-0开始"><span class="nav-number">2.</span> <span class="nav-text">Android6.0开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-检查权限状态"><span class="nav-number">3.</span> <span class="nav-text">1.检查权限状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-动态请求权限"><span class="nav-number">4.</span> <span class="nav-text">2.动态请求权限</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1有时候可能需要解释为什么需要这个权限"><span class="nav-number">4.1.</span> <span class="nav-text">2.1有时候可能需要解释为什么需要这个权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2请求权限"><span class="nav-number">4.2.</span> <span class="nav-text">2.2请求权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3处理请求权限的响应"><span class="nav-number">4.3.</span> <span class="nav-text">2.3处理请求权限的响应</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dino</span>
+</div>
+
+<!--
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+-->
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"dinomonster"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("8qm7vzCs0YAgf2tnqzt4ODts-gzGzoHsz", "FHqdtTG6DkUcj659EdD0LHd4");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

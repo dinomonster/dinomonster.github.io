@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2017/05/16/surfaceView%E5%92%8CView%E5%8C%BA%E5%88%AB/</loc>
+    <lastmod>2017-05-21T09:36:41.892Z</lastmod>
+    <data>
+        <display>
+        <title>surfaceView和View的区别</title>
+        <pubTime>2017-05-16T02:52:55.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/08/15/%E4%BD%BF%E7%94%A8drawable%E6%9D%A5%E5%AE%9E%E7%8E%B0%E5%9C%86%E5%BD%A2%E6%8C%89%E9%92%AE%E4%BB%A5%E5%8F%8A%E7%82%B9%E5%87%BB%E6%95%88%E6%9E%9C/</loc>
+    <lastmod>2017-05-21T09:31:43.688Z</lastmod>
+    <data>
+        <display>
+        <title>使用drawable来实现圆形按钮以及点击效果</title>
+        <pubTime>2016-08-15T12:20:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/10/06/%E4%BD%BF%E7%94%A8AnimatorSet%E6%89%A7%E8%A1%8C%E4%B8%80%E7%BB%84%E5%8A%A8%E7%94%BB/</loc>
+    <lastmod>2017-05-21T09:31:43.688Z</lastmod>
+    <data>
+        <display>
+        <title>使用AnimatorSet执行一组动画</title>
+        <pubTime>2016-10-06T08:58:25.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/08/26/%E5%88%B6%E4%BD%9Cgif/</loc>
+    <lastmod>2017-05-21T09:31:43.688Z</lastmod>
+    <data>
+        <display>
+        <title>制作gif</title>
+        <pubTime>2016-08-26T02:13:03.000Z</pubTime>
+        
+        <tag>其他</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/08/25/%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89banner/</loc>
+    <lastmod>2017-05-21T09:31:43.688Z</lastmod>
+    <data>
+        <display>
+        <title>实现自定义banner</title>
+        <pubTime>2016-08-25T06:54:23.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/11/01/Android%E5%BC%80%E5%8F%91%E7%9A%84%E7%BB%8F%E9%AA%8C/</loc>
+    <lastmod>2017-05-21T09:31:43.626Z</lastmod>
+    <data>
+        <display>
+        <title>Android开发的经验</title>
+        <pubTime>2016-11-01T01:55:35.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/08/09/Android%E8%AF%BB%E5%8F%96json%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2017-05-21T09:31:43.626Z</lastmod>
+    <data>
+        <display>
+        <title>Android读取json配置</title>
+        <pubTime>2016-08-09T08:02:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/08/16/%E4%B8%BA%E8%BF%87%E6%BB%A4%E5%8A%A8%E6%80%81%E5%8A%A0%E5%85%A5%E5%8D%95%E9%80%89%E6%8C%89%E9%92%AE/</loc>
+    <lastmod>2017-05-21T09:31:43.626Z</lastmod>
+    <data>
+        <display>
+        <title>为过滤动态加入单选按钮</title>
+        <pubTime>2016-08-16T11:22:28.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/10/06/vector%E5%8A%A8%E7%94%BB%E4%BB%A5%E5%8F%8A%E5%85%BC%E5%AE%B9/</loc>
+    <lastmod>2017-05-21T09:31:43.626Z</lastmod>
+    <data>
+        <display>
+        <title>vector动画以及兼容</title>
+        <pubTime>2016-10-06T08:32:01.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Vector</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/09/29/Android%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Vector-%E7%9F%A2%E9%87%8F%E5%9B%BE-%E5%85%BC%E5%AE%B9%E6%97%A7%E7%89%88%E6%9C%AC/</loc>
+    <lastmod>2017-05-21T09:31:43.626Z</lastmod>
+    <data>
+        <display>
+        <title>Android如何使用Vector(矢量图)以及兼容旧版本</title>
+        <pubTime>2016-09-29T04:06:07.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Vector</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/10/10/git-nothing-added-to-commit-but-untracked-files-present/</loc>
+    <lastmod>2017-05-21T09:31:43.626Z</lastmod>
+    <data>
+        <display>
+        <title>git nothing added to commit but untracked files present</title>
+        <pubTime>2016-10-10T06:38:55.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/08/24/%E4%BB%BFios%E4%B8%8B%E8%BD%BD%E6%8E%A7%E4%BB%B6/</loc>
+    <lastmod>2017-05-21T09:31:43.626Z</lastmod>
+    <data>
+        <display>
+        <title>仿ios下载控件</title>
+        <pubTime>2016-08-24T09:29:03.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/08/09/2016-8-9/</loc>
+    <lastmod>2017-05-21T09:31:43.626Z</lastmod>
+    <data>
+        <display>
+        <title>Android6.0权限机制变更</title>
+        <pubTime>2016-08-09T01:56:28.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/08/08/2016-8-8/</loc>
+    <lastmod>2017-05-21T09:31:43.626Z</lastmod>
+    <data>
+        <display>
+        <title>如何使用markdown插入图片</title>
+        <pubTime>2016-08-08T02:37:51.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dinomonster.github.io/2016/08/05/2016-08-05/</loc>
+    <lastmod>2017-05-21T09:31:43.610Z</lastmod>
+    <data>
+        <display>
+        <title>如何用hexo搭建静态博客</title>
+        <pubTime>2016-08-05T07:16:19.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>

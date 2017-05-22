@@ -1,0 +1,922 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google2043cde1f559beda.html" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x672C;&amp;#x6587;&amp;#x8F6C;&amp;#x8F7D;&amp;#xFF0C; &amp;#x4E2D;&amp;#x6587;&amp;#x539F;&amp;#x6587;&amp;#x94FE;&amp;#x63A5;&amp;#x539F;&amp;#x7248;&amp;#x82F1;&amp;#x6587;&amp;#xFF0C;Building Android Apps&amp;#x200A;&amp;#x2014;&amp;#x200A;30 things that experience">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android开发的经验">
+<meta property="og:url" content="https://dinomonster.github.io/2016/11/01/Android开发的经验/index.html">
+<meta property="og:site_name" content="Dino's blog">
+<meta property="og:description" content="&amp;#x672C;&amp;#x6587;&amp;#x8F6C;&amp;#x8F7D;&amp;#xFF0C; &amp;#x4E2D;&amp;#x6587;&amp;#x539F;&amp;#x6587;&amp;#x94FE;&amp;#x63A5;&amp;#x539F;&amp;#x7248;&amp;#x82F1;&amp;#x6587;&amp;#xFF0C;Building Android Apps&amp;#x200A;&amp;#x2014;&amp;#x200A;30 things that experience">
+<meta property="og:updated_time" content="2017-05-21T09:31:43.626Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android开发的经验">
+<meta name="twitter:description" content="&amp;#x672C;&amp;#x6587;&amp;#x8F6C;&amp;#x8F7D;&amp;#xFF0C; &amp;#x4E2D;&amp;#x6587;&amp;#x539F;&amp;#x6587;&amp;#x94FE;&amp;#x63A5;&amp;#x539F;&amp;#x7248;&amp;#x82F1;&amp;#x6587;&amp;#xFF0C;Building Android Apps&amp;#x200A;&amp;#x2014;&amp;#x200A;30 things that experience">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://dinomonster.github.io/2016/11/01/Android开发的经验/"/>
+
+  <title> Android开发的经验 | Dino's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Dino's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Life is made up of small pleasures</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android开发的经验
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-01T09:55:35+08:00" content="2016-11-01">
+              2016-11-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/01/Android开发的经验/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/01/Android开发的经验/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/01/Android开发的经验/" class="leancloud_visitors" data-flag-title="Android开发的经验">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x672C;&#x6587;&#x8F6C;&#x8F7D;&#xFF0C; <a href="http://yifeng.studio/2016/10/27/android-develop-30-things-that-experience-made-me-learn-the-hard-way/" target="_blank" rel="external">&#x4E2D;&#x6587;&#x539F;&#x6587;&#x94FE;&#x63A5;</a><br>&#x539F;&#x7248;&#x82F1;&#x6587;&#xFF0C;<a href="https://medium.com/@cesarmcferreira/building-android-apps-30-things-that-experience-made-me-learn-the-hard-way-313680430bf9#.5exr8zumk" target="_blank" rel="external">Building Android Apps&#x200A;&#x2014;&#x200A;30 things that experience made me learn the hard way</a></p>
+<p>&#x5B66;&#x4E60;&#x9886;&#x57DF;&#x6709;&#x4E24;&#x79CD;&#x4EBA;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x81EA;&#x8EAB;&#x523B;&#x82E6;&#x94BB;&#x7814;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x6478;&#x7D22;&#x7684;&#x4EBA;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x91C7;&#x53D6;&#x6377;&#x5F84;&#x83B7;&#x53D6;&#x522B;&#x4EBA;&#x7ECF;&#x9A8C;&#x7684;&#x4EBA;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x6211;&#x4E00;&#x8DEF;&#x5B66;&#x5230;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x548C;&#x4F60;&#x5206;&#x4EAB;&#xFF1A;</p>
+<h4 id="1-&#x6DFB;&#x52A0;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7C7B;&#x5E93;&#x524D;&#xFF0C;&#x8BF7;&#x518D;&#x4E09;&#x601D;&#x8003;&#xFF0C;&#x771F;&#x7684;&#x5F88;&#x91CD;&#x8981;&#xFF1B;&#xFF08;&#x672A;&#x6765;&#x4E00;&#x4E9B;&#x672A;&#x77E5;&#x7684;&#x9519;&#x8BEF;&#x4E5F;&#x8BB8;&#x5C31;&#x53D1;&#x751F;&#x5728;&#x8FD9;&#x4E9B;&#x7C7B;&#x5E93;&#x4E2D;&#xFF0C;&#x5173;&#x4E8E;&#x7B2C;&#x4E09;&#x65B9;&#x7C7B;&#x5E93;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;stormzhang&#xFF0D;&#x5982;&#x4F55;&#x6B63;&#x786E;&#x4F7F;&#x7528;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF1F;&#xFF09;"><a href="#1-&#x6DFB;&#x52A0;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7C7B;&#x5E93;&#x524D;&#xFF0C;&#x8BF7;&#x518D;&#x4E09;&#x601D;&#x8003;&#xFF0C;&#x771F;&#x7684;&#x5F88;&#x91CD;&#x8981;&#xFF1B;&#xFF08;&#x672A;&#x6765;&#x4E00;&#x4E9B;&#x672A;&#x77E5;&#x7684;&#x9519;&#x8BEF;&#x4E5F;&#x8BB8;&#x5C31;&#x53D1;&#x751F;&#x5728;&#x8FD9;&#x4E9B;&#x7C7B;&#x5E93;&#x4E2D;&#xFF0C;&#x5173;&#x4E8E;&#x7B2C;&#x4E09;&#x65B9;&#x7C7B;&#x5E93;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;stormzhang&#xFF0D;&#x5982;&#x4F55;&#x6B63;&#x786E;&#x4F7F;&#x7528;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF1F;&#xFF09;" class="headerlink" title="1.&#x6DFB;&#x52A0;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7C7B;&#x5E93;&#x524D;&#xFF0C;&#x8BF7;&#x518D;&#x4E09;&#x601D;&#x8003;&#xFF0C;&#x771F;&#x7684;&#x5F88;&#x91CD;&#x8981;&#xFF1B;&#xFF08;&#x672A;&#x6765;&#x4E00;&#x4E9B;&#x672A;&#x77E5;&#x7684;&#x9519;&#x8BEF;&#x4E5F;&#x8BB8;&#x5C31;&#x53D1;&#x751F;&#x5728;&#x8FD9;&#x4E9B;&#x7C7B;&#x5E93;&#x4E2D;&#xFF0C;&#x5173;&#x4E8E;&#x7B2C;&#x4E09;&#x65B9;&#x7C7B;&#x5E93;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;stormzhang&#xFF0D;&#x5982;&#x4F55;&#x6B63;&#x786E;&#x4F7F;&#x7528;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF1F;&#xFF09;"></a>1.&#x6DFB;&#x52A0;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7C7B;&#x5E93;&#x524D;&#xFF0C;&#x8BF7;&#x518D;&#x4E09;&#x601D;&#x8003;&#xFF0C;&#x771F;&#x7684;&#x5F88;&#x91CD;&#x8981;&#xFF1B;&#xFF08;&#x672A;&#x6765;&#x4E00;&#x4E9B;&#x672A;&#x77E5;&#x7684;&#x9519;&#x8BEF;&#x4E5F;&#x8BB8;&#x5C31;&#x53D1;&#x751F;&#x5728;&#x8FD9;&#x4E9B;&#x7C7B;&#x5E93;&#x4E2D;&#xFF0C;&#x5173;&#x4E8E;&#x7B2C;&#x4E09;&#x65B9;&#x7C7B;&#x5E93;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;<a href="http://stormzhang.com/android/2016/05/08/how-to-choose-open-source-project/" target="_blank" rel="external">stormzhang&#xFF0D;&#x5982;&#x4F55;&#x6B63;&#x786E;&#x4F7F;&#x7528;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#xFF1F;</a>&#xFF09;</h4><h4 id="2-&#x7528;&#x6237;&#x770B;&#x4E0D;&#x5230;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5C31;&#x4E0D;&#x8981;&#x53BB;&#x753B;&#x5B83;&#xFF1B;&#xFF08;&#x907F;&#x514D;&#x8FC7;&#x5EA6;&#x7ED8;&#x5236;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Optimizing-Layouts-in-Android-&#x2013;-Reducing-Overdraw&#xFF09;"><a href="#2-&#x7528;&#x6237;&#x770B;&#x4E0D;&#x5230;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5C31;&#x4E0D;&#x8981;&#x53BB;&#x753B;&#x5B83;&#xFF1B;&#xFF08;&#x907F;&#x514D;&#x8FC7;&#x5EA6;&#x7ED8;&#x5236;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Optimizing-Layouts-in-Android-&#x2013;-Reducing-Overdraw&#xFF09;" class="headerlink" title="2.&#x7528;&#x6237;&#x770B;&#x4E0D;&#x5230;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5C31;&#x4E0D;&#x8981;&#x53BB;&#x753B;&#x5B83;&#xFF1B;&#xFF08;&#x907F;&#x514D;&#x8FC7;&#x5EA6;&#x7ED8;&#x5236;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Optimizing Layouts in Android &#x2013; Reducing Overdraw&#xFF09;"></a>2.&#x7528;&#x6237;&#x770B;&#x4E0D;&#x5230;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5C31;&#x4E0D;&#x8981;&#x53BB;&#x753B;&#x5B83;&#xFF1B;&#xFF08;&#x907F;&#x514D;&#x8FC7;&#x5EA6;&#x7ED8;&#x5236;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;<a href="http://riggaroo.co.za/optimizing-layouts-in-android-reducing-overdraw/" target="_blank" rel="external">Optimizing Layouts in Android &#x2013; Reducing Overdraw</a>&#xFF09;</h4><h4 id="3-&#x9664;&#x975E;&#x771F;&#x7684;&#x9700;&#x8981;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;&#xFF1B;"><a href="#3-&#x9664;&#x975E;&#x771F;&#x7684;&#x9700;&#x8981;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;&#xFF1B;" class="headerlink" title="3.&#x9664;&#x975E;&#x771F;&#x7684;&#x9700;&#x8981;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;&#xFF1B;"></a>3.&#x9664;&#x975E;&#x771F;&#x7684;&#x9700;&#x8981;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x5E93;&#xFF1B;</h4><h4 id="4-&#x5E94;&#x7528;&#x4E2D;65K&#x7684;&#x65B9;&#x6CD5;&#x6570;&#x5F88;&#x5FEB;&#x5C31;&#x80FD;&#x8FBE;&#x5230;&#xFF0C;&#x6211;&#x7684;&#x610F;&#x601D;&#x662F;&#x771F;&#x7684;&#x5F88;&#x5FEB;&#xFF01;&#x4E0D;&#x8FC7;-multidexing&#x4E5F;&#x8BB8;&#x80FD;&#x5E2E;&#x5230;&#x4F60;&#xFF1B;&#xFF08;&#x6700;&#x8FD1;&#x521A;&#x603B;&#x7ED3;&#x8FC7;&#x4E00;&#x7BC7;&#xFF1A;Android-&#x7A81;&#x7834;64K&#x65B9;&#x6CD5;&#x6570;&#x7684;&#x9650;&#x5236;&#xFF09;"><a href="#4-&#x5E94;&#x7528;&#x4E2D;65K&#x7684;&#x65B9;&#x6CD5;&#x6570;&#x5F88;&#x5FEB;&#x5C31;&#x80FD;&#x8FBE;&#x5230;&#xFF0C;&#x6211;&#x7684;&#x610F;&#x601D;&#x662F;&#x771F;&#x7684;&#x5F88;&#x5FEB;&#xFF01;&#x4E0D;&#x8FC7;-multidexing&#x4E5F;&#x8BB8;&#x80FD;&#x5E2E;&#x5230;&#x4F60;&#xFF1B;&#xFF08;&#x6700;&#x8FD1;&#x521A;&#x603B;&#x7ED3;&#x8FC7;&#x4E00;&#x7BC7;&#xFF1A;Android-&#x7A81;&#x7834;64K&#x65B9;&#x6CD5;&#x6570;&#x7684;&#x9650;&#x5236;&#xFF09;" class="headerlink" title="4.&#x5E94;&#x7528;&#x4E2D;65K&#x7684;&#x65B9;&#x6CD5;&#x6570;&#x5F88;&#x5FEB;&#x5C31;&#x80FD;&#x8FBE;&#x5230;&#xFF0C;&#x6211;&#x7684;&#x610F;&#x601D;&#x662F;&#x771F;&#x7684;&#x5F88;&#x5FEB;&#xFF01;&#x4E0D;&#x8FC7; multidexing&#x4E5F;&#x8BB8;&#x80FD;&#x5E2E;&#x5230;&#x4F60;&#xFF1B;&#xFF08;&#x6700;&#x8FD1;&#x521A;&#x603B;&#x7ED3;&#x8FC7;&#x4E00;&#x7BC7;&#xFF1A;Android &#x7A81;&#x7834;64K&#x65B9;&#x6CD5;&#x6570;&#x7684;&#x9650;&#x5236;&#xFF09;"></a>4.&#x5E94;&#x7528;&#x4E2D;65K&#x7684;&#x65B9;&#x6CD5;&#x6570;&#x5F88;&#x5FEB;&#x5C31;&#x80FD;&#x8FBE;&#x5230;&#xFF0C;&#x6211;&#x7684;&#x610F;&#x601D;&#x662F;&#x771F;&#x7684;&#x5F88;&#x5FEB;&#xFF01;&#x4E0D;&#x8FC7; <a href="https://medium.com/@rotxed/dex-skys-the-limit-no-65k-methods-is-28e6cb40cf71" target="_blank" rel="external">multidexing</a>&#x4E5F;&#x8BB8;&#x80FD;&#x5E2E;&#x5230;&#x4F60;&#xFF1B;&#xFF08;&#x6700;&#x8FD1;&#x521A;&#x603B;&#x7ED3;&#x8FC7;&#x4E00;&#x7BC7;&#xFF1A;<a href="http://yifeng.studio/2016/10/26/android-64k-methods-count/" target="_blank" rel="external">Android &#x7A81;&#x7834;64K&#x65B9;&#x6CD5;&#x6570;&#x7684;&#x9650;&#x5236;</a>&#xFF09;</h4><h4 id="5-RxJava-&#x7EDD;&#x5BF9;&#x662F;AsyncTasks&#x7B49;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x7C7B;&#x6700;&#x597D;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Party-tricks-with-RxJava-RxAndroid-amp-Retrolambda&#xFF09;"><a href="#5-RxJava-&#x7EDD;&#x5BF9;&#x662F;AsyncTasks&#x7B49;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x7C7B;&#x6700;&#x597D;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Party-tricks-with-RxJava-RxAndroid-amp-Retrolambda&#xFF09;" class="headerlink" title="5.RxJava &#x7EDD;&#x5BF9;&#x662F;AsyncTasks&#x7B49;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x7C7B;&#x6700;&#x597D;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Party tricks with RxJava, RxAndroid &amp; Retrolambda&#xFF09;"></a>5.<a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">RxJava</a> &#x7EDD;&#x5BF9;&#x662F;AsyncTasks&#x7B49;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x7C7B;&#x6700;&#x597D;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;<a href="https://medium.com/swlh/party-tricks-with-rxjava-rxandroid-retrolambda-1b06ed7cd29c#.ctr2m3fpn" target="_blank" rel="external">Party tricks with RxJava, RxAndroid &amp; Retrolambda</a>&#xFF09;</h4><h4 id="6-Retrofit-&#x662F;&#x6700;&#x4F18;&#x79C0;&#x7684;&#x7F51;&#x7EDC;&#x6846;&#x67B6;&#xFF1B;&#xFF08;&#x6CA1;&#x6709;&#x4E4B;&#x4E00;&#xFF09;"><a href="#6-Retrofit-&#x662F;&#x6700;&#x4F18;&#x79C0;&#x7684;&#x7F51;&#x7EDC;&#x6846;&#x67B6;&#xFF1B;&#xFF08;&#x6CA1;&#x6709;&#x4E4B;&#x4E00;&#xFF09;" class="headerlink" title="6.Retrofit &#x662F;&#x6700;&#x4F18;&#x79C0;&#x7684;&#x7F51;&#x7EDC;&#x6846;&#x67B6;&#xFF1B;&#xFF08;&#x6CA1;&#x6709;&#x4E4B;&#x4E00;&#xFF09;"></a>6.<a href="http://square.github.io/retrofit/" target="_blank" rel="external">Retrofit</a> &#x662F;&#x6700;&#x4F18;&#x79C0;&#x7684;&#x7F51;&#x7EDC;&#x6846;&#x67B6;&#xFF1B;&#xFF08;&#x6CA1;&#x6709;&#x4E4B;&#x4E00;&#xFF09;</h4><h4 id="7-&#x4F7F;&#x7528;-Retrolambda-&#x7F29;&#x51CF;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#xFF1B;"><a href="#7-&#x4F7F;&#x7528;-Retrolambda-&#x7F29;&#x51CF;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#xFF1B;" class="headerlink" title="7.&#x4F7F;&#x7528; Retrolambda &#x7F29;&#x51CF;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#xFF1B;"></a>7.&#x4F7F;&#x7528; <a href="https://medium.com/android-news/retrolambda-on-android-191cc8151f85" target="_blank" rel="external">Retrolambda</a> &#x7F29;&#x51CF;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#xFF1B;</h4><h4 id="8-&#x611F;&#x53D7;RxJava&#x4E0E;Retrofit&#x548C;Retrolambda&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x7684;&#x9B45;&#x529B;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Party-tricks-with-RxJava-RxAndroid-amp-Retrolambda&#xFF09;"><a href="#8-&#x611F;&#x53D7;RxJava&#x4E0E;Retrofit&#x548C;Retrolambda&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x7684;&#x9B45;&#x529B;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Party-tricks-with-RxJava-RxAndroid-amp-Retrolambda&#xFF09;" class="headerlink" title="8.&#x611F;&#x53D7;RxJava&#x4E0E;Retrofit&#x548C;Retrolambda&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x7684;&#x9B45;&#x529B;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Party tricks with RxJava, RxAndroid &amp; Retrolambda&#xFF09;"></a>8.&#x611F;&#x53D7;RxJava&#x4E0E;Retrofit&#x548C;Retrolambda&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x7684;&#x9B45;&#x529B;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;<a href="https://medium.com/swlh/party-tricks-with-rxjava-rxandroid-retrolambda-1b06ed7cd29c#.ctr2m3fpn" target="_blank" rel="external">Party tricks with RxJava, RxAndroid &amp; Retrolambda</a>&#xFF09;</h4><h4 id="9-&#x6211;&#x4F7F;&#x7528;-EventBus-&#xFF0C;&#x5B83;&#x5F88;&#x5F3A;&#x5927;&#xFF0C;&#x4F46;&#x6211;&#x4E0D;&#x4F1A;&#x8FC7;&#x5EA6;&#x4F7F;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4F1A;&#x4F7F;&#x4EE3;&#x7801;&#x5E93;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x6742;&#x4E71;&#x65E0;&#x7AE0;&#xFF1B;"><a href="#9-&#x6211;&#x4F7F;&#x7528;-EventBus-&#xFF0C;&#x5B83;&#x5F88;&#x5F3A;&#x5927;&#xFF0C;&#x4F46;&#x6211;&#x4E0D;&#x4F1A;&#x8FC7;&#x5EA6;&#x4F7F;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4F1A;&#x4F7F;&#x4EE3;&#x7801;&#x5E93;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x6742;&#x4E71;&#x65E0;&#x7AE0;&#xFF1B;" class="headerlink" title="9.&#x6211;&#x4F7F;&#x7528; EventBus &#xFF0C;&#x5B83;&#x5F88;&#x5F3A;&#x5927;&#xFF0C;&#x4F46;&#x6211;&#x4E0D;&#x4F1A;&#x8FC7;&#x5EA6;&#x4F7F;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4F1A;&#x4F7F;&#x4EE3;&#x7801;&#x5E93;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x6742;&#x4E71;&#x65E0;&#x7AE0;&#xFF1B;"></a>9.&#x6211;&#x4F7F;&#x7528; <a href="https://github.com/greenrobot/EventBus" target="_blank" rel="external">EventBus</a> &#xFF0C;&#x5B83;&#x5F88;&#x5F3A;&#x5927;&#xFF0C;&#x4F46;&#x6211;&#x4E0D;&#x4F1A;&#x8FC7;&#x5EA6;&#x4F7F;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4F1A;&#x4F7F;&#x4EE3;&#x7801;&#x5E93;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x6742;&#x4E71;&#x65E0;&#x7AE0;&#xFF1B;</h4><h4 id="10-&#x6839;&#x636E;&#x5E94;&#x7528;&#x529F;&#x80FD;&#x5206;&#x5305;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6240;&#x5C5E;&#x7C7B;&#x522B;&#xFF1B;&#xFF08;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Package-by-features-not-layers&#xFF09;"><a href="#10-&#x6839;&#x636E;&#x5E94;&#x7528;&#x529F;&#x80FD;&#x5206;&#x5305;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6240;&#x5C5E;&#x7C7B;&#x522B;&#xFF1B;&#xFF08;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Package-by-features-not-layers&#xFF09;" class="headerlink" title="10.&#x6839;&#x636E;&#x5E94;&#x7528;&#x529F;&#x80FD;&#x5206;&#x5305;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6240;&#x5C5E;&#x7C7B;&#x522B;&#xFF1B;&#xFF08;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Package by features, not layers&#xFF09;"></a>10.&#x6839;&#x636E;&#x5E94;&#x7528;&#x529F;&#x80FD;&#x5206;&#x5305;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6240;&#x5C5E;&#x7C7B;&#x522B;&#xFF1B;&#xFF08;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;&#xFF0C;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;<a href="https://medium.com/@cesarmcferreira/package-by-features-not-layers-2d076df1964d#.em996bn3v" target="_blank" rel="external">Package by features, not layers</a>&#xFF09;</h4><h4 id="11-&#x79FB;&#x9664;-Application-&#x7EBF;&#x7A0B;&#x91CC;&#x7684;&#x4E00;&#x5207;&#x4EE3;&#x7801;&#xFF1B;&#xFF08;&#x907F;&#x514D;&#x62D6;&#x6162;&#x5E94;&#x7528;&#x7684;&#x521D;&#x59CB;&#x5316;&#x548C;&#x542F;&#x52A8;&#x901F;&#x5EA6;&#xFF09;"><a href="#11-&#x79FB;&#x9664;-Application-&#x7EBF;&#x7A0B;&#x91CC;&#x7684;&#x4E00;&#x5207;&#x4EE3;&#x7801;&#xFF1B;&#xFF08;&#x907F;&#x514D;&#x62D6;&#x6162;&#x5E94;&#x7528;&#x7684;&#x521D;&#x59CB;&#x5316;&#x548C;&#x542F;&#x52A8;&#x901F;&#x5EA6;&#xFF09;" class="headerlink" title="11.&#x79FB;&#x9664; Application &#x7EBF;&#x7A0B;&#x91CC;&#x7684;&#x4E00;&#x5207;&#x4EE3;&#x7801;&#xFF1B;&#xFF08;&#x907F;&#x514D;&#x62D6;&#x6162;&#x5E94;&#x7528;&#x7684;&#x521D;&#x59CB;&#x5316;&#x548C;&#x542F;&#x52A8;&#x901F;&#x5EA6;&#xFF09;"></a>11.&#x79FB;&#x9664; Application &#x7EBF;&#x7A0B;&#x91CC;&#x7684;&#x4E00;&#x5207;&#x4EE3;&#x7801;&#xFF1B;&#xFF08;&#x907F;&#x514D;&#x62D6;&#x6162;&#x5E94;&#x7528;&#x7684;&#x521D;&#x59CB;&#x5316;&#x548C;&#x542F;&#x52A8;&#x901F;&#x5EA6;&#xFF09;</h4><h4 id="12-&#x4F7F;&#x7528;-lint-&#x4F18;&#x5316;&#x5E03;&#x5C40;&#xFF0C;&#x4EE5;&#x4FBF;&#x4F60;&#x80FD;&#x4E00;&#x773C;&#x8BC6;&#x522B;&#x51FA;&#x5197;&#x4F59;&#x7684;&#x89C6;&#x56FE;&#x5E76;&#x79FB;&#x9664;&#xFF1B;"><a href="#12-&#x4F7F;&#x7528;-lint-&#x4F18;&#x5316;&#x5E03;&#x5C40;&#xFF0C;&#x4EE5;&#x4FBF;&#x4F60;&#x80FD;&#x4E00;&#x773C;&#x8BC6;&#x522B;&#x51FA;&#x5197;&#x4F59;&#x7684;&#x89C6;&#x56FE;&#x5E76;&#x79FB;&#x9664;&#xFF1B;" class="headerlink" title="12.&#x4F7F;&#x7528; lint &#x4F18;&#x5316;&#x5E03;&#x5C40;&#xFF0C;&#x4EE5;&#x4FBF;&#x4F60;&#x80FD;&#x4E00;&#x773C;&#x8BC6;&#x522B;&#x51FA;&#x5197;&#x4F59;&#x7684;&#x89C6;&#x56FE;&#x5E76;&#x79FB;&#x9664;&#xFF1B;"></a>12.&#x4F7F;&#x7528; <a href="http://developer.android.com/tools/help/layoutopt.html" target="_blank" rel="external">lint</a> &#x4F18;&#x5316;&#x5E03;&#x5C40;&#xFF0C;&#x4EE5;&#x4FBF;&#x4F60;&#x80FD;&#x4E00;&#x773C;&#x8BC6;&#x522B;&#x51FA;&#x5197;&#x4F59;&#x7684;&#x89C6;&#x56FE;&#x5E76;&#x79FB;&#x9664;&#xFF1B;</h4><h4 id="13-&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;gradle&#xFF0C;&#x60F3;&#x5C3D;&#x4E00;&#x5207;&#x529E;&#x6CD5;&#x52A0;&#x5FEB;&#x7F16;&#x8BD1;&#x901F;&#x5EA6;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;How-I-save-5h-week-on-Gradle-builds&#xFF09;"><a href="#13-&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;gradle&#xFF0C;&#x60F3;&#x5C3D;&#x4E00;&#x5207;&#x529E;&#x6CD5;&#x52A0;&#x5FEB;&#x7F16;&#x8BD1;&#x901F;&#x5EA6;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;How-I-save-5h-week-on-Gradle-builds&#xFF09;" class="headerlink" title="13.&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;gradle&#xFF0C;&#x60F3;&#x5C3D;&#x4E00;&#x5207;&#x529E;&#x6CD5;&#x52A0;&#x5FEB;&#x7F16;&#x8BD1;&#x901F;&#x5EA6;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;How I save 5h/week on Gradle builds&#xFF09;"></a>13.&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;gradle&#xFF0C;&#x60F3;&#x5C3D;&#x4E00;&#x5207;&#x529E;&#x6CD5;&#x52A0;&#x5FEB;&#x7F16;&#x8BD1;&#x901F;&#x5EA6;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;<a href="https://medium.com/@cesarmcferreira/speeding-up-gradle-builds-619c442113cb#.1d2hhi8hu" target="_blank" rel="external">How I save 5h/week on Gradle builds</a>&#xFF09;</h4><h4 id="14-&#x4F7F;&#x7528;-Profile-report-&#x67E5;&#x770B;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;&#x5230;&#x5E95;&#x662F;&#x5728;&#x4EC0;&#x4E48;&#x5730;&#x65B9;&#x8017;&#x8D39;&#x7684;&#xFF1B;"><a href="#14-&#x4F7F;&#x7528;-Profile-report-&#x67E5;&#x770B;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;&#x5230;&#x5E95;&#x662F;&#x5728;&#x4EC0;&#x4E48;&#x5730;&#x65B9;&#x8017;&#x8D39;&#x7684;&#xFF1B;" class="headerlink" title="14.&#x4F7F;&#x7528; Profile report &#x67E5;&#x770B;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;&#x5230;&#x5E95;&#x662F;&#x5728;&#x4EC0;&#x4E48;&#x5730;&#x65B9;&#x8017;&#x8D39;&#x7684;&#xFF1B;"></a>14.&#x4F7F;&#x7528; <a href="https://medium.com/the-engineering-team/speeding-up-gradle-builds-619c442113cb" target="_blank" rel="external">Profile report</a> &#x67E5;&#x770B;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;&#x5230;&#x5E95;&#x662F;&#x5728;&#x4EC0;&#x4E48;&#x5730;&#x65B9;&#x8017;&#x8D39;&#x7684;&#xFF1B;</h4><h4 id="15-&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x4F17;&#x6240;&#x5468;&#x77E5;&#x7684;&#x6210;&#x719F;&#x67B6;&#x6784;&#x4F53;&#x7CFB;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Architecting-Android&#x2026;The-evolution&#xFF09;"><a href="#15-&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x4F17;&#x6240;&#x5468;&#x77E5;&#x7684;&#x6210;&#x719F;&#x67B6;&#x6784;&#x4F53;&#x7CFB;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Architecting-Android&#x2026;The-evolution&#xFF09;" class="headerlink" title="15.&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x4F17;&#x6240;&#x5468;&#x77E5;&#x7684;&#x6210;&#x719F;&#x67B6;&#x6784;&#x4F53;&#x7CFB;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Architecting Android&#x2026;The evolution&#xFF09;"></a>15.&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x4F17;&#x6240;&#x5468;&#x77E5;&#x7684;&#x6210;&#x719F;&#x67B6;&#x6784;&#x4F53;&#x7CFB;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;<a href="http://fernandocejas.com/2015/07/18/architecting-android-the-evolution/" target="_blank" rel="external">Architecting Android&#x2026;The evolution</a>&#xFF09;</h4><h4 id="16-&#x6D4B;&#x8BD5;&#x6D88;&#x8017;&#x65F6;&#x95F4;&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x65E6;&#x4F60;&#x638C;&#x63E1;&#x4E86;&#x6D4B;&#x8BD5;&#x7684;&#x7A8D;&#x95E8;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x5B83;&#x6BD4;&#x6CA1;&#x6709;&#x7ECF;&#x8FC7;&#x6D4B;&#x8BD5;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x5FEB;&#x66F4;&#x7A33;&#x59A5;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x5730;&#x5740;&#xFF1A;http-stackoverflow-com-questions-67299-is-unit-testing-worth-the-effort-67500-67500"><a href="#16-&#x6D4B;&#x8BD5;&#x6D88;&#x8017;&#x65F6;&#x95F4;&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x65E6;&#x4F60;&#x638C;&#x63E1;&#x4E86;&#x6D4B;&#x8BD5;&#x7684;&#x7A8D;&#x95E8;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x5B83;&#x6BD4;&#x6CA1;&#x6709;&#x7ECF;&#x8FC7;&#x6D4B;&#x8BD5;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x5FEB;&#x66F4;&#x7A33;&#x59A5;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x5730;&#x5740;&#xFF1A;http-stackoverflow-com-questions-67299-is-unit-testing-worth-the-effort-67500-67500" class="headerlink" title="16.&#x6D4B;&#x8BD5;&#x6D88;&#x8017;&#x65F6;&#x95F4;&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x65E6;&#x4F60;&#x638C;&#x63E1;&#x4E86;&#x6D4B;&#x8BD5;&#x7684;&#x7A8D;&#x95E8;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x5B83;&#x6BD4;&#x6CA1;&#x6709;&#x7ECF;&#x8FC7;&#x6D4B;&#x8BD5;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x5FEB;&#x66F4;&#x7A33;&#x59A5;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x5730;&#x5740;&#xFF1A;http://stackoverflow.com/questions/67299/is-unit-testing-worth-the-effort/67500#67500)"></a>16.&#x6D4B;&#x8BD5;&#x6D88;&#x8017;&#x65F6;&#x95F4;&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x65E6;&#x4F60;&#x638C;&#x63E1;&#x4E86;&#x6D4B;&#x8BD5;&#x7684;&#x7A8D;&#x95E8;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x5B83;&#x6BD4;&#x6CA1;&#x6709;&#x7ECF;&#x8FC7;&#x6D4B;&#x8BD5;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x5FEB;&#x66F4;&#x7A33;&#x59A5;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x5730;&#x5740;&#xFF1A;<a href="http://stackoverflow.com/questions/67299/is-unit-testing-worth-the-effort/67500#67500" target="_blank" rel="external">http://stackoverflow.com/questions/67299/is-unit-testing-worth-the-effort/67500#67500</a>)</h4><h4 id="17-&#x4F7F;&#x7528;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x4F7F;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x66F4;&#x52A0;&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x5E76;&#x4E14;&#x66F4;&#x5BB9;&#x6613;&#x6D4B;&#x8BD5;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Tasting-Dagger-2-on-Android&#xFF09;"><a href="#17-&#x4F7F;&#x7528;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x4F7F;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x66F4;&#x52A0;&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x5E76;&#x4E14;&#x66F4;&#x5BB9;&#x6613;&#x6D4B;&#x8BD5;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Tasting-Dagger-2-on-Android&#xFF09;" class="headerlink" title="17.&#x4F7F;&#x7528;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x4F7F;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x66F4;&#x52A0;&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x5E76;&#x4E14;&#x66F4;&#x5BB9;&#x6613;&#x6D4B;&#x8BD5;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;Tasting Dagger 2 on Android&#xFF09;"></a>17.&#x4F7F;&#x7528;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x4F7F;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x66F4;&#x52A0;&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x5E76;&#x4E14;&#x66F4;&#x5BB9;&#x6613;&#x6D4B;&#x8BD5;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;<a href="http://fernandocejas.com/2015/04/11/tasting-dagger-2-on-android/" target="_blank" rel="external">Tasting Dagger 2 on Android</a>&#xFF09;</h4><h4 id="18-&#x5173;&#x6CE8;-Fragmened-Podcast-&#x5BF9;&#x4F60;&#x5927;&#x6709;&#x5E2E;&#x52A9;&#xFF1B;&#xFF08;Fragmented&#xFF0C;&#x4E00;&#x4E2A;&#x4E13;&#x5C5E;&#x5B89;&#x5353;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x64AD;&#x5BA2;&#x7F51;&#x7AD9;&#xFF09;"><a href="#18-&#x5173;&#x6CE8;-Fragmened-Podcast-&#x5BF9;&#x4F60;&#x5927;&#x6709;&#x5E2E;&#x52A9;&#xFF1B;&#xFF08;Fragmented&#xFF0C;&#x4E00;&#x4E2A;&#x4E13;&#x5C5E;&#x5B89;&#x5353;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x64AD;&#x5BA2;&#x7F51;&#x7AD9;&#xFF09;" class="headerlink" title="18.&#x5173;&#x6CE8; Fragmened Podcast &#x5BF9;&#x4F60;&#x5927;&#x6709;&#x5E2E;&#x52A9;&#xFF1B;&#xFF08;Fragmented&#xFF0C;&#x4E00;&#x4E2A;&#x4E13;&#x5C5E;&#x5B89;&#x5353;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x64AD;&#x5BA2;&#x7F51;&#x7AD9;&#xFF09;"></a>18.&#x5173;&#x6CE8; <a href="http://fragmentedpodcast.com/" target="_blank" rel="external">Fragmened Podcast</a> &#x5BF9;&#x4F60;&#x5927;&#x6709;&#x5E2E;&#x52A9;&#xFF1B;&#xFF08;Fragmented&#xFF0C;&#x4E00;&#x4E2A;&#x4E13;&#x5C5E;&#x5B89;&#x5353;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x64AD;&#x5BA2;&#x7F51;&#x7AD9;&#xFF09;</h4><h4 id="19-&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x79C1;&#x4EBA;&#x90AE;&#x7BB1;&#x4F5C;&#x4E3A;&#x5B89;&#x5353;&#x5E02;&#x573A;&#x7684;&#x53D1;&#x5E03;&#x8005;&#x8D26;&#x53F7;&#xFF1B;&#xFF08;&#x4E3B;&#x8981;&#x662F;Google-Play&#xFF0C;&#x6848;&#x4F8B;&#x53C2;&#x8003;&#xFF1A;https-www-reddit-com-r-Android-comments-2hywu9-google-play-only-one-strike-is-needed-to-ruin-you-&#xFF09;"><a href="#19-&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x79C1;&#x4EBA;&#x90AE;&#x7BB1;&#x4F5C;&#x4E3A;&#x5B89;&#x5353;&#x5E02;&#x573A;&#x7684;&#x53D1;&#x5E03;&#x8005;&#x8D26;&#x53F7;&#xFF1B;&#xFF08;&#x4E3B;&#x8981;&#x662F;Google-Play&#xFF0C;&#x6848;&#x4F8B;&#x53C2;&#x8003;&#xFF1A;https-www-reddit-com-r-Android-comments-2hywu9-google-play-only-one-strike-is-needed-to-ruin-you-&#xFF09;" class="headerlink" title="19.&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x79C1;&#x4EBA;&#x90AE;&#x7BB1;&#x4F5C;&#x4E3A;&#x5B89;&#x5353;&#x5E02;&#x573A;&#x7684;&#x53D1;&#x5E03;&#x8005;&#x8D26;&#x53F7;&#xFF1B;&#xFF08;&#x4E3B;&#x8981;&#x662F;Google Play&#xFF0C;&#x6848;&#x4F8B;&#x53C2;&#x8003;&#xFF1A;https://www.reddit.com/r/Android/comments/2hywu9/google_play_only_one_strike_is_needed_to_ruin_you/&#xFF09;"></a>19.&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x79C1;&#x4EBA;&#x90AE;&#x7BB1;&#x4F5C;&#x4E3A;&#x5B89;&#x5353;&#x5E02;&#x573A;&#x7684;&#x53D1;&#x5E03;&#x8005;&#x8D26;&#x53F7;&#xFF1B;&#xFF08;&#x4E3B;&#x8981;&#x662F;Google Play&#xFF0C;&#x6848;&#x4F8B;&#x53C2;&#x8003;&#xFF1A;<a href="https://www.reddit.com/r/Android/comments/2hywu9/google_play_only_one_strike_is_needed_to_ruin_you/&#xFF09;" target="_blank" rel="external">https://www.reddit.com/r/Android/comments/2hywu9/google_play_only_one_strike_is_needed_to_ruin_you/&#xFF09;</a></h4><h4 id="20-&#x575A;&#x6301;&#x4F7F;&#x7528;&#x5408;&#x9002;&#x7684;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#xFF1B;&#xFF08;&#x9488;&#x5BF9;&#x8F93;&#x5165;&#x6846;&#xFF0C;&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;Specifying-the-Input-Method-Type&#xFF09;"><a href="#20-&#x575A;&#x6301;&#x4F7F;&#x7528;&#x5408;&#x9002;&#x7684;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#xFF1B;&#xFF08;&#x9488;&#x5BF9;&#x8F93;&#x5165;&#x6846;&#xFF0C;&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;Specifying-the-Input-Method-Type&#xFF09;" class="headerlink" title="20.&#x575A;&#x6301;&#x4F7F;&#x7528;&#x5408;&#x9002;&#x7684;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#xFF1B;&#xFF08;&#x9488;&#x5BF9;&#x8F93;&#x5165;&#x6846;&#xFF0C;&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;Specifying the Input Method Type&#xFF09;"></a>20.&#x575A;&#x6301;&#x4F7F;&#x7528;&#x5408;&#x9002;&#x7684;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#xFF1B;&#xFF08;&#x9488;&#x5BF9;&#x8F93;&#x5165;&#x6846;&#xFF0C;&#x53C2;&#x8003;&#x94FE;&#x63A5;&#xFF1A;<a href="https://developer.android.com/training/keyboard-input/style.html" target="_blank" rel="external">Specifying the Input Method Type</a>&#xFF09;</h4><h4 id="21-&#x5B66;&#x4F1A;&#x501F;&#x52A9;&#x5206;&#x6790;&#x5B66;&#x5BFB;&#x627E;&#x901A;&#x7528;&#x6A21;&#x5F0F;&#x548C;&#x5B64;&#x7ACB;&#x95EE;&#x9898;&#xFF1B;&#xFF08;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x5C01;&#x88C5;&#x7B49;&#xFF09;"><a href="#21-&#x5B66;&#x4F1A;&#x501F;&#x52A9;&#x5206;&#x6790;&#x5B66;&#x5BFB;&#x627E;&#x901A;&#x7528;&#x6A21;&#x5F0F;&#x548C;&#x5B64;&#x7ACB;&#x95EE;&#x9898;&#xFF1B;&#xFF08;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x5C01;&#x88C5;&#x7B49;&#xFF09;" class="headerlink" title="21.&#x5B66;&#x4F1A;&#x501F;&#x52A9;&#x5206;&#x6790;&#x5B66;&#x5BFB;&#x627E;&#x901A;&#x7528;&#x6A21;&#x5F0F;&#x548C;&#x5B64;&#x7ACB;&#x95EE;&#x9898;&#xFF1B;&#xFF08;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x5C01;&#x88C5;&#x7B49;&#xFF09;"></a>21.&#x5B66;&#x4F1A;&#x501F;&#x52A9;&#x5206;&#x6790;&#x5B66;&#x5BFB;&#x627E;&#x901A;&#x7528;&#x6A21;&#x5F0F;&#x548C;&#x5B64;&#x7ACB;&#x95EE;&#x9898;&#xFF1B;&#xFF08;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x5C01;&#x88C5;&#x7B49;&#xFF09;</h4><h4 id="22-&#x4FDD;&#x6301;&#x5B66;&#x4E60;&#x6700;&#x65B0;&#x5F00;&#x6E90;&#x7C7B;&#x5E93;&#xFF0C;&#x5E76;&#x501F;&#x52A9;-dryrun-&#x5DE5;&#x5177;&#x6D4B;&#x8BD5;&#x5F00;&#x6E90;&#x7C7B;&#x5E93;&#xFF1B;&#xFF08;Android-Arsenal-&#xFF0C;&#x4E00;&#x4E2A;&#x641C;&#x7D22;&#x6574;&#x5408;Android&#x5F00;&#x6E90;&#x7C7B;&#x5E93;&#x7684;&#x7F51;&#x7AD9;&#xFF09;"><a href="#22-&#x4FDD;&#x6301;&#x5B66;&#x4E60;&#x6700;&#x65B0;&#x5F00;&#x6E90;&#x7C7B;&#x5E93;&#xFF0C;&#x5E76;&#x501F;&#x52A9;-dryrun-&#x5DE5;&#x5177;&#x6D4B;&#x8BD5;&#x5F00;&#x6E90;&#x7C7B;&#x5E93;&#xFF1B;&#xFF08;Android-Arsenal-&#xFF0C;&#x4E00;&#x4E2A;&#x641C;&#x7D22;&#x6574;&#x5408;Android&#x5F00;&#x6E90;&#x7C7B;&#x5E93;&#x7684;&#x7F51;&#x7AD9;&#xFF09;" class="headerlink" title="22.&#x4FDD;&#x6301;&#x5B66;&#x4E60;&#x6700;&#x65B0;&#x5F00;&#x6E90;&#x7C7B;&#x5E93;&#xFF0C;&#x5E76;&#x501F;&#x52A9; dryrun &#x5DE5;&#x5177;&#x6D4B;&#x8BD5;&#x5F00;&#x6E90;&#x7C7B;&#x5E93;&#xFF1B;&#xFF08;Android Arsenal &#xFF0C;&#x4E00;&#x4E2A;&#x641C;&#x7D22;&#x6574;&#x5408;Android&#x5F00;&#x6E90;&#x7C7B;&#x5E93;&#x7684;&#x7F51;&#x7AD9;&#xFF09;"></a>22.&#x4FDD;&#x6301;&#x5B66;&#x4E60;&#x6700;&#x65B0;&#x5F00;&#x6E90;&#x7C7B;&#x5E93;&#xFF0C;&#x5E76;&#x501F;&#x52A9; <a href="https://github.com/cesarferreira/dryrun" target="_blank" rel="external">dryrun</a> &#x5DE5;&#x5177;&#x6D4B;&#x8BD5;&#x5F00;&#x6E90;&#x7C7B;&#x5E93;&#xFF1B;&#xFF08;<a href="https://android-arsenal.com/" target="_blank" rel="external">Android Arsenal</a> &#xFF0C;&#x4E00;&#x4E2A;&#x641C;&#x7D22;&#x6574;&#x5408;Android&#x5F00;&#x6E90;&#x7C7B;&#x5E93;&#x7684;&#x7F51;&#x7AD9;&#xFF09;</h4><h4 id="23-Service&#x670D;&#x52A1;&#x5E94;&#x8BE5;&#x505A;&#x5B83;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x5E76;&#x4E14;&#x5C3D;&#x53EF;&#x80FD;&#x5FEB;&#x5730;&#x7EC8;&#x6B62;&#xFF1B;"><a href="#23-Service&#x670D;&#x52A1;&#x5E94;&#x8BE5;&#x505A;&#x5B83;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x5E76;&#x4E14;&#x5C3D;&#x53EF;&#x80FD;&#x5FEB;&#x5730;&#x7EC8;&#x6B62;&#xFF1B;" class="headerlink" title="23.Service&#x670D;&#x52A1;&#x5E94;&#x8BE5;&#x505A;&#x5B83;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x5E76;&#x4E14;&#x5C3D;&#x53EF;&#x80FD;&#x5FEB;&#x5730;&#x7EC8;&#x6B62;&#xFF1B;"></a>23.Service&#x670D;&#x52A1;&#x5E94;&#x8BE5;&#x505A;&#x5B83;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x5E76;&#x4E14;&#x5C3D;&#x53EF;&#x80FD;&#x5FEB;&#x5730;&#x7EC8;&#x6B62;&#xFF1B;</h4><h4 id="24-&#x4F7F;&#x7528;-Account-Manager-&#x63D0;&#x793A;&#x7528;&#x6237;&#x540D;&#x548C;&#x90AE;&#x7BB1;&#x5730;&#x5740;&#xFF1B;"><a href="#24-&#x4F7F;&#x7528;-Account-Manager-&#x63D0;&#x793A;&#x7528;&#x6237;&#x540D;&#x548C;&#x90AE;&#x7BB1;&#x5730;&#x5740;&#xFF1B;" class="headerlink" title="24.&#x4F7F;&#x7528; Account Manager &#x63D0;&#x793A;&#x7528;&#x6237;&#x540D;&#x548C;&#x90AE;&#x7BB1;&#x5730;&#x5740;&#xFF1B;"></a>24.&#x4F7F;&#x7528; <a href="http://developer.android.com/reference/android/accounts/AccountManager.html" target="_blank" rel="external">Account Manager</a> &#x63D0;&#x793A;&#x7528;&#x6237;&#x540D;&#x548C;&#x90AE;&#x7BB1;&#x5730;&#x5740;&#xFF1B;</h4><h4 id="25-&#x4F7F;&#x7528;CI-&#x6301;&#x7EED;&#x96C6;&#x6210;-&#x7F16;&#x8BD1;&#x6784;&#x5EFA;&#x6D4B;&#x8BD5;&#x7248;&#x548C;&#x53D1;&#x5E03;&#x7248;&#x5E94;&#x7528;&#xFF1B;"><a href="#25-&#x4F7F;&#x7528;CI-&#x6301;&#x7EED;&#x96C6;&#x6210;-&#x7F16;&#x8BD1;&#x6784;&#x5EFA;&#x6D4B;&#x8BD5;&#x7248;&#x548C;&#x53D1;&#x5E03;&#x7248;&#x5E94;&#x7528;&#xFF1B;" class="headerlink" title="25.&#x4F7F;&#x7528;CI(&#x6301;&#x7EED;&#x96C6;&#x6210;)&#x7F16;&#x8BD1;&#x6784;&#x5EFA;&#x6D4B;&#x8BD5;&#x7248;&#x548C;&#x53D1;&#x5E03;&#x7248;&#x5E94;&#x7528;&#xFF1B;"></a>25.&#x4F7F;&#x7528;CI(&#x6301;&#x7EED;&#x96C6;&#x6210;)&#x7F16;&#x8BD1;&#x6784;&#x5EFA;&#x6D4B;&#x8BD5;&#x7248;&#x548C;&#x53D1;&#x5E03;&#x7248;&#x5E94;&#x7528;&#xFF1B;</h4><h4 id="26-&#x4E0D;&#x8981;&#x8FD0;&#x884C;&#x4F60;&#x81EA;&#x5DF1;&#x7684;-CI-server&#xFF0C;&#x9632;&#x6B62;-SSL-&#x653B;&#x51FB;&#x800C;&#x9020;&#x6210;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x3001;&#x5B89;&#x5168;&#x95EE;&#x9898;&#x3001;&#x670D;&#x52A1;&#x66F4;&#x65B0;&#x90FD;&#x9700;&#x8981;&#x7EF4;&#x6301;-server-&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4EF6;&#x8017;&#x8D39;&#x65F6;&#x95F4;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x4F7F;&#x7528;circleci&#x3001;travis-&#x548C;-shippable&#xFF0C;&#x76F8;&#x6BD4;&#x800C;&#x8A00;&#xFF0C;&#x6027;&#x4EF7;&#x6BD4;&#x66F4;&#x9AD8;&#xFF0C;&#x66F4;&#x53EF;&#x9760;&#xFF1B;"><a href="#26-&#x4E0D;&#x8981;&#x8FD0;&#x884C;&#x4F60;&#x81EA;&#x5DF1;&#x7684;-CI-server&#xFF0C;&#x9632;&#x6B62;-SSL-&#x653B;&#x51FB;&#x800C;&#x9020;&#x6210;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x3001;&#x5B89;&#x5168;&#x95EE;&#x9898;&#x3001;&#x670D;&#x52A1;&#x66F4;&#x65B0;&#x90FD;&#x9700;&#x8981;&#x7EF4;&#x6301;-server-&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4EF6;&#x8017;&#x8D39;&#x65F6;&#x95F4;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x4F7F;&#x7528;circleci&#x3001;travis-&#x548C;-shippable&#xFF0C;&#x76F8;&#x6BD4;&#x800C;&#x8A00;&#xFF0C;&#x6027;&#x4EF7;&#x6BD4;&#x66F4;&#x9AD8;&#xFF0C;&#x66F4;&#x53EF;&#x9760;&#xFF1B;" class="headerlink" title="26.&#x4E0D;&#x8981;&#x8FD0;&#x884C;&#x4F60;&#x81EA;&#x5DF1;&#x7684; CI server&#xFF0C;&#x9632;&#x6B62; SSL &#x653B;&#x51FB;&#x800C;&#x9020;&#x6210;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x3001;&#x5B89;&#x5168;&#x95EE;&#x9898;&#x3001;&#x670D;&#x52A1;&#x66F4;&#x65B0;&#x90FD;&#x9700;&#x8981;&#x7EF4;&#x6301; server &#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4EF6;&#x8017;&#x8D39;&#x65F6;&#x95F4;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x4F7F;&#x7528;circleci&#x3001;travis &#x548C; shippable&#xFF0C;&#x76F8;&#x6BD4;&#x800C;&#x8A00;&#xFF0C;&#x6027;&#x4EF7;&#x6BD4;&#x66F4;&#x9AD8;&#xFF0C;&#x66F4;&#x53EF;&#x9760;&#xFF1B;"></a>26.&#x4E0D;&#x8981;&#x8FD0;&#x884C;&#x4F60;&#x81EA;&#x5DF1;&#x7684; CI server&#xFF0C;&#x9632;&#x6B62; SSL &#x653B;&#x51FB;&#x800C;&#x9020;&#x6210;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x3001;&#x5B89;&#x5168;&#x95EE;&#x9898;&#x3001;&#x670D;&#x52A1;&#x66F4;&#x65B0;&#x90FD;&#x9700;&#x8981;&#x7EF4;&#x6301; server &#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4EF6;&#x8017;&#x8D39;&#x65F6;&#x95F4;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x4F7F;&#x7528;circleci&#x3001;travis &#x548C; shippable&#xFF0C;&#x76F8;&#x6BD4;&#x800C;&#x8A00;&#xFF0C;&#x6027;&#x4EF7;&#x6BD4;&#x66F4;&#x9AD8;&#xFF0C;&#x66F4;&#x53EF;&#x9760;&#xFF1B;</h4><h4 id="27-&#x4F7F;&#x7528;-gradle-play-publisher-&#x81EA;&#x52A8;&#x90E8;&#x7F72;&#x4E0A;&#x4F20;Apk&#x6587;&#x4EF6;&#x7B49;&#x4FE1;&#x606F;&#x5230;&#x5E94;&#x7528;&#x5546;&#x5E97;&#xFF1B;"><a href="#27-&#x4F7F;&#x7528;-gradle-play-publisher-&#x81EA;&#x52A8;&#x90E8;&#x7F72;&#x4E0A;&#x4F20;Apk&#x6587;&#x4EF6;&#x7B49;&#x4FE1;&#x606F;&#x5230;&#x5E94;&#x7528;&#x5546;&#x5E97;&#xFF1B;" class="headerlink" title="27.&#x4F7F;&#x7528; gradle-play-publisher &#x81EA;&#x52A8;&#x90E8;&#x7F72;&#x4E0A;&#x4F20;Apk&#x6587;&#x4EF6;&#x7B49;&#x4FE1;&#x606F;&#x5230;&#x5E94;&#x7528;&#x5546;&#x5E97;&#xFF1B;"></a>27.&#x4F7F;&#x7528; <a href="https://github.com/Triple-T/gradle-play-publisher" target="_blank" rel="external">gradle-play-publisher</a> &#x81EA;&#x52A8;&#x90E8;&#x7F72;&#x4E0A;&#x4F20;Apk&#x6587;&#x4EF6;&#x7B49;&#x4FE1;&#x606F;&#x5230;&#x5E94;&#x7528;&#x5546;&#x5E97;&#xFF1B;</h4><h4 id="28-&#x5982;&#x679C;&#x4E00;&#x4E2A;library&#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x800C;&#x4F60;&#x53EA;&#x662F;&#x7528;&#x5230;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#x529F;&#x80FD;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x5C31;&#x5E94;&#x8BE5;&#x5BFB;&#x627E;&#x4E00;&#x4E2A;&#x66F4;&#x5C0F;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#xFF1B;&#xFF08;&#x6BD4;&#x5982;&#x53EF;&#x4EE5;&#x501F;&#x52A9;-proguard-&#x5DE5;&#x5177;&#xFF09;"><a href="#28-&#x5982;&#x679C;&#x4E00;&#x4E2A;library&#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x800C;&#x4F60;&#x53EA;&#x662F;&#x7528;&#x5230;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#x529F;&#x80FD;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x5C31;&#x5E94;&#x8BE5;&#x5BFB;&#x627E;&#x4E00;&#x4E2A;&#x66F4;&#x5C0F;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#xFF1B;&#xFF08;&#x6BD4;&#x5982;&#x53EF;&#x4EE5;&#x501F;&#x52A9;-proguard-&#x5DE5;&#x5177;&#xFF09;" class="headerlink" title="28.&#x5982;&#x679C;&#x4E00;&#x4E2A;library&#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x800C;&#x4F60;&#x53EA;&#x662F;&#x7528;&#x5230;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#x529F;&#x80FD;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x5C31;&#x5E94;&#x8BE5;&#x5BFB;&#x627E;&#x4E00;&#x4E2A;&#x66F4;&#x5C0F;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#xFF1B;&#xFF08;&#x6BD4;&#x5982;&#x53EF;&#x4EE5;&#x501F;&#x52A9; proguard &#x5DE5;&#x5177;&#xFF09;"></a>28.&#x5982;&#x679C;&#x4E00;&#x4E2A;library&#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x800C;&#x4F60;&#x53EA;&#x662F;&#x7528;&#x5230;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#x529F;&#x80FD;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x5C31;&#x5E94;&#x8BE5;&#x5BFB;&#x627E;&#x4E00;&#x4E2A;&#x66F4;&#x5C0F;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#xFF1B;&#xFF08;&#x6BD4;&#x5982;&#x53EF;&#x4EE5;&#x501F;&#x52A9; <a href="http://developer.android.com/tools/help/proguard.html" target="_blank" rel="external">proguard</a> &#x5DE5;&#x5177;&#xFF09;</h4><h4 id="29-&#x4E0D;&#x8981;&#x5927;&#x91CF;&#x4F7F;&#x7528;&#x8D85;&#x51FA;&#x4F60;&#x5B9E;&#x9645;&#x9700;&#x8981;&#x7684;&#x4F9D;&#x8D56;&#x5E93;&#x3002;&#x7279;&#x522B;&#x662F;&#x5F53;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x5E93;&#x4E0D;&#x662F;&#x7ECF;&#x5E38;&#x5728;&#x53D8;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x8981;&#x8003;&#x8651;&#x5230;&#xFF0C;&#x8FD9;&#x4E9B;&#x7C7B;&#x5E93;&#x4ECE;&#x5934;&#x7F16;&#x8BD1;&#xFF08;-CI-Builds-&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x4F8B;&#x5B50;&#xFF09;&#x6216;&#x8005;&#x68C0;&#x67E5;&#x4E4B;&#x524D;&#x7F16;&#x8BD1;&#x597D;&#x7684;&#x72EC;&#x7ACB;&#x7C7B;&#x5E93;&#x662F;&#x5426;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x6240;&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x76F8;&#x6BD4;&#x7B80;&#x5355;&#x5730;&#x52A0;&#x8F7D;jar&#x6216;&#x8005;aar&#x8FD9;&#x6837;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x9AD8;&#x8FBE;&#x56DB;&#x500D;&#x4E4B;&#x591A;&#xFF1B;"><a href="#29-&#x4E0D;&#x8981;&#x5927;&#x91CF;&#x4F7F;&#x7528;&#x8D85;&#x51FA;&#x4F60;&#x5B9E;&#x9645;&#x9700;&#x8981;&#x7684;&#x4F9D;&#x8D56;&#x5E93;&#x3002;&#x7279;&#x522B;&#x662F;&#x5F53;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x5E93;&#x4E0D;&#x662F;&#x7ECF;&#x5E38;&#x5728;&#x53D8;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x8981;&#x8003;&#x8651;&#x5230;&#xFF0C;&#x8FD9;&#x4E9B;&#x7C7B;&#x5E93;&#x4ECE;&#x5934;&#x7F16;&#x8BD1;&#xFF08;-CI-Builds-&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x4F8B;&#x5B50;&#xFF09;&#x6216;&#x8005;&#x68C0;&#x67E5;&#x4E4B;&#x524D;&#x7F16;&#x8BD1;&#x597D;&#x7684;&#x72EC;&#x7ACB;&#x7C7B;&#x5E93;&#x662F;&#x5426;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x6240;&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x76F8;&#x6BD4;&#x7B80;&#x5355;&#x5730;&#x52A0;&#x8F7D;jar&#x6216;&#x8005;aar&#x8FD9;&#x6837;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x9AD8;&#x8FBE;&#x56DB;&#x500D;&#x4E4B;&#x591A;&#xFF1B;" class="headerlink" title="29.&#x4E0D;&#x8981;&#x5927;&#x91CF;&#x4F7F;&#x7528;&#x8D85;&#x51FA;&#x4F60;&#x5B9E;&#x9645;&#x9700;&#x8981;&#x7684;&#x4F9D;&#x8D56;&#x5E93;&#x3002;&#x7279;&#x522B;&#x662F;&#x5F53;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x5E93;&#x4E0D;&#x662F;&#x7ECF;&#x5E38;&#x5728;&#x53D8;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x8981;&#x8003;&#x8651;&#x5230;&#xFF0C;&#x8FD9;&#x4E9B;&#x7C7B;&#x5E93;&#x4ECE;&#x5934;&#x7F16;&#x8BD1;&#xFF08; CI Builds &#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x4F8B;&#x5B50;&#xFF09;&#x6216;&#x8005;&#x68C0;&#x67E5;&#x4E4B;&#x524D;&#x7F16;&#x8BD1;&#x597D;&#x7684;&#x72EC;&#x7ACB;&#x7C7B;&#x5E93;&#x662F;&#x5426;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x6240;&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x76F8;&#x6BD4;&#x7B80;&#x5355;&#x5730;&#x52A0;&#x8F7D;jar&#x6216;&#x8005;aar&#x8FD9;&#x6837;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x9AD8;&#x8FBE;&#x56DB;&#x500D;&#x4E4B;&#x591A;&#xFF1B;"></a>29.&#x4E0D;&#x8981;&#x5927;&#x91CF;&#x4F7F;&#x7528;&#x8D85;&#x51FA;&#x4F60;&#x5B9E;&#x9645;&#x9700;&#x8981;&#x7684;&#x4F9D;&#x8D56;&#x5E93;&#x3002;&#x7279;&#x522B;&#x662F;&#x5F53;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x5E93;&#x4E0D;&#x662F;&#x7ECF;&#x5E38;&#x5728;&#x53D8;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x8981;&#x8003;&#x8651;&#x5230;&#xFF0C;&#x8FD9;&#x4E9B;&#x7C7B;&#x5E93;&#x4ECE;&#x5934;&#x7F16;&#x8BD1;&#xFF08; CI Builds &#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x4F8B;&#x5B50;&#xFF09;&#x6216;&#x8005;&#x68C0;&#x67E5;&#x4E4B;&#x524D;&#x7F16;&#x8BD1;&#x597D;&#x7684;&#x72EC;&#x7ACB;&#x7C7B;&#x5E93;&#x662F;&#x5426;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x6240;&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x76F8;&#x6BD4;&#x7B80;&#x5355;&#x5730;&#x52A0;&#x8F7D;jar&#x6216;&#x8005;aar&#x8FD9;&#x6837;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF0C;&#x9AD8;&#x8FBE;&#x56DB;&#x500D;&#x4E4B;&#x591A;&#xFF1B;</h4><h4 id="30-&#x5F00;&#x59CB;&#x8003;&#x8651;&#x4F7F;&#x7528;-SVG-&#x4EE3;&#x66FF;-PNG-&#x683C;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x5730;&#x5740;&#xFF1A;Add-Multi-Density-Vector-Graphics&#xFF09;"><a href="#30-&#x5F00;&#x59CB;&#x8003;&#x8651;&#x4F7F;&#x7528;-SVG-&#x4EE3;&#x66FF;-PNG-&#x683C;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x5730;&#x5740;&#xFF1A;Add-Multi-Density-Vector-Graphics&#xFF09;" class="headerlink" title="30.&#x5F00;&#x59CB;&#x8003;&#x8651;&#x4F7F;&#x7528; SVG &#x4EE3;&#x66FF; PNG &#x683C;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x5730;&#x5740;&#xFF1A;Add Multi-Density Vector Graphics&#xFF09;"></a>30.&#x5F00;&#x59CB;&#x8003;&#x8651;&#x4F7F;&#x7528; SVG &#x4EE3;&#x66FF; PNG &#x683C;&#x5F0F;&#x7684;&#x56FE;&#x7247;&#xFF1B;&#xFF08;&#x53C2;&#x8003;&#x5730;&#x5740;&#xFF1A;<a href="http://developer.android.com/tools/help/vector-asset-studio.html" target="_blank" rel="external">Add Multi-Density Vector Graphics</a>&#xFF09;</h4><h4 id="31-&#x5C01;&#x88C5;&#x62BD;&#x8C61;&#x5316;-library-&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x6837;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x65B0;&#x7684;-library-&#x66FF;&#x4EE3;&#x65E7;-library-&#x65F6;&#x5C31;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x5BB9;&#x6613;&#xFF1B;"><a href="#31-&#x5C01;&#x88C5;&#x62BD;&#x8C61;&#x5316;-library-&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x6837;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x65B0;&#x7684;-library-&#x66FF;&#x4EE3;&#x65E7;-library-&#x65F6;&#x5C31;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x5BB9;&#x6613;&#xFF1B;" class="headerlink" title="31.&#x5C01;&#x88C5;&#x62BD;&#x8C61;&#x5316; library &#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x6837;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x65B0;&#x7684; library &#x66FF;&#x4EE3;&#x65E7; library &#x65F6;&#x5C31;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x5BB9;&#x6613;&#xFF1B;"></a>31.&#x5C01;&#x88C5;&#x62BD;&#x8C61;&#x5316; library &#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x6837;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x65B0;&#x7684; library &#x66FF;&#x4EE3;&#x65E7; library &#x65F6;&#x5C31;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x5BB9;&#x6613;&#xFF1B;</h4><h4 id="32-&#x76D1;&#x542C;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x53D8;&#x5316;&#x548C;&#x8FDE;&#x63A5;&#x7C7B;&#x578B;&#xFF08;Wifi&#x72B6;&#x6001;&#x4E0B;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x66F4;&#x9891;&#x7E41;&#xFF1F;&#xFF09;&#xFF1B;"><a href="#32-&#x76D1;&#x542C;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x53D8;&#x5316;&#x548C;&#x8FDE;&#x63A5;&#x7C7B;&#x578B;&#xFF08;Wifi&#x72B6;&#x6001;&#x4E0B;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x66F4;&#x9891;&#x7E41;&#xFF1F;&#xFF09;&#xFF1B;" class="headerlink" title="32.&#x76D1;&#x542C;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x53D8;&#x5316;&#x548C;&#x8FDE;&#x63A5;&#x7C7B;&#x578B;&#xFF08;Wifi&#x72B6;&#x6001;&#x4E0B;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x66F4;&#x9891;&#x7E41;&#xFF1F;&#xFF09;&#xFF1B;"></a>32.&#x76D1;&#x542C;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x53D8;&#x5316;&#x548C;&#x8FDE;&#x63A5;&#x7C7B;&#x578B;&#xFF08;Wifi&#x72B6;&#x6001;&#x4E0B;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x66F4;&#x9891;&#x7E41;&#xFF1F;&#xFF09;&#xFF1B;</h4><h4 id="33-&#x76D1;&#x542C;&#x7535;&#x6E90;&#x548C;&#x7535;&#x6C60;&#x7535;&#x91CF;&#x53D8;&#x5316;&#xFF08;&#x5145;&#x7535;&#x65F6;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x66F4;&#x9891;&#x7E41;&#xFF1F;&#x7535;&#x6C60;&#x7535;&#x91CF;&#x4E0D;&#x8DB3;&#x65F6;&#x6682;&#x505C;&#x66F4;&#x65B0;&#xFF1F;&#xFF09;&#xFF1B;"><a href="#33-&#x76D1;&#x542C;&#x7535;&#x6E90;&#x548C;&#x7535;&#x6C60;&#x7535;&#x91CF;&#x53D8;&#x5316;&#xFF08;&#x5145;&#x7535;&#x65F6;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x66F4;&#x9891;&#x7E41;&#xFF1F;&#x7535;&#x6C60;&#x7535;&#x91CF;&#x4E0D;&#x8DB3;&#x65F6;&#x6682;&#x505C;&#x66F4;&#x65B0;&#xFF1F;&#xFF09;&#xFF1B;" class="headerlink" title="33.&#x76D1;&#x542C;&#x7535;&#x6E90;&#x548C;&#x7535;&#x6C60;&#x7535;&#x91CF;&#x53D8;&#x5316;&#xFF08;&#x5145;&#x7535;&#x65F6;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x66F4;&#x9891;&#x7E41;&#xFF1F;&#x7535;&#x6C60;&#x7535;&#x91CF;&#x4E0D;&#x8DB3;&#x65F6;&#x6682;&#x505C;&#x66F4;&#x65B0;&#xFF1F;&#xFF09;&#xFF1B;"></a>33.&#x76D1;&#x542C;&#x7535;&#x6E90;&#x548C;&#x7535;&#x6C60;&#x7535;&#x91CF;&#x53D8;&#x5316;&#xFF08;&#x5145;&#x7535;&#x65F6;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x66F4;&#x9891;&#x7E41;&#xFF1F;&#x7535;&#x6C60;&#x7535;&#x91CF;&#x4E0D;&#x8DB3;&#x65F6;&#x6682;&#x505C;&#x66F4;&#x65B0;&#xFF1F;&#xFF09;&#xFF1B;</h4><h4 id="34-&#x5C55;&#x73B0;&#x7ED9;&#x7528;&#x6237;&#x7684;UI&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x7B11;&#x8BDD;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x5F97;&#x4E0D;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x7684;&#x8BDD;&#xFF0C;&#x5B83;&#x5C31;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x597D;&#x7B11;&#x8BDD;&#xFF1B;"><a href="#34-&#x5C55;&#x73B0;&#x7ED9;&#x7528;&#x6237;&#x7684;UI&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x7B11;&#x8BDD;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x5F97;&#x4E0D;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x7684;&#x8BDD;&#xFF0C;&#x5B83;&#x5C31;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x597D;&#x7B11;&#x8BDD;&#xFF1B;" class="headerlink" title="34.&#x5C55;&#x73B0;&#x7ED9;&#x7528;&#x6237;&#x7684;UI&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x7B11;&#x8BDD;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x5F97;&#x4E0D;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x7684;&#x8BDD;&#xFF0C;&#x5B83;&#x5C31;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x597D;&#x7B11;&#x8BDD;&#xFF1B;"></a>34.&#x5C55;&#x73B0;&#x7ED9;&#x7528;&#x6237;&#x7684;UI&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x7B11;&#x8BDD;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x5F97;&#x4E0D;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x7684;&#x8BDD;&#xFF0C;&#x5B83;&#x5C31;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x597D;&#x7B11;&#x8BDD;&#xFF1B;</h4><h4 id="35-&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#x5F88;&#x91CD;&#x8981;&#xFF1A;Coding-&#x5B9E;&#x73B0;&#x6162;&#xFF0C;&#x4F46;&#x8981;&#x6B63;&#x786E;&#xFF0C;&#x7136;&#x540E;&#x9A8C;&#x8BC1;&#x4F18;&#x5316;&#xFF0C;&#x8FD9;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x4EFB;&#x4F55;&#x6D4B;&#x8BD5;&#x5185;&#x5BB9;&#x3002;"><a href="#35-&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#x5F88;&#x91CD;&#x8981;&#xFF1A;Coding-&#x5B9E;&#x73B0;&#x6162;&#xFF0C;&#x4F46;&#x8981;&#x6B63;&#x786E;&#xFF0C;&#x7136;&#x540E;&#x9A8C;&#x8BC1;&#x4F18;&#x5316;&#xFF0C;&#x8FD9;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x4EFB;&#x4F55;&#x6D4B;&#x8BD5;&#x5185;&#x5BB9;&#x3002;" class="headerlink" title="35.&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#x5F88;&#x91CD;&#x8981;&#xFF1A;Coding &#x5B9E;&#x73B0;&#x6162;&#xFF0C;&#x4F46;&#x8981;&#x6B63;&#x786E;&#xFF0C;&#x7136;&#x540E;&#x9A8C;&#x8BC1;&#x4F18;&#x5316;&#xFF0C;&#x8FD9;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x4EFB;&#x4F55;&#x6D4B;&#x8BD5;&#x5185;&#x5BB9;&#x3002;"></a>35.&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#x5F88;&#x91CD;&#x8981;&#xFF1A;Coding &#x5B9E;&#x73B0;&#x6162;&#xFF0C;&#x4F46;&#x8981;&#x6B63;&#x786E;&#xFF0C;&#x7136;&#x540E;&#x9A8C;&#x8BC1;&#x4F18;&#x5316;&#xFF0C;&#x8FD9;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x4EFB;&#x4F55;&#x6D4B;&#x8BD5;&#x5185;&#x5BB9;&#x3002;</h4>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/10/git-nothing-added-to-commit-but-untracked-files-present/" rel="next" title="git nothing added to commit but untracked files present">
+                <i class="fa fa-chevron-left"></i> git nothing added to commit but untracked files present
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/16/surfaceView和View区别/" rel="prev" title="surfaceView和View的区别">
+                surfaceView和View的区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/01/Android开发的经验/"
+           data-title="Android开发的经验" data-url="https://dinomonster.github.io/2016/11/01/Android开发的经验/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Dino" />
+          <p class="site-author-name" itemprop="name">Dino</p>
+          <p class="site-description motion-element" itemprop="description">Life is made up of small pleasures.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/dinomonster" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/profile.php?id=100006608145650&fref=ts" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-添加使用第三方类库前，请再三思考，真的很重要；（未来一些未知的错误也许就发生在这些类库中，关于第三方类库的选择，参考文章：stormzhang－如何正确使用开源项目？）"><span class="nav-number">1.</span> <span class="nav-text">1.添加使用第三方类库前，请再三思考，真的很重要；（未来一些未知的错误也许就发生在这些类库中，关于第三方类库的选择，参考文章：stormzhang－如何正确使用开源项目？）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-用户看不到的地方，就不要去画它；（避免过度绘制，参考文章：Optimizing-Layouts-in-Android-–-Reducing-Overdraw）"><span class="nav-number">2.</span> <span class="nav-text">2.用户看不到的地方，就不要去画它；（避免过度绘制，参考文章：Optimizing Layouts in Android – Reducing Overdraw）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-除非真的需要，否则不要使用数据库；"><span class="nav-number">3.</span> <span class="nav-text">3.除非真的需要，否则不要使用数据库；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-应用中65K的方法数很快就能达到，我的意思是真的很快！不过-multidexing也许能帮到你；（最近刚总结过一篇：Android-突破64K方法数的限制）"><span class="nav-number">4.</span> <span class="nav-text">4.应用中65K的方法数很快就能达到，我的意思是真的很快！不过 multidexing也许能帮到你；（最近刚总结过一篇：Android 突破64K方法数的限制）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-RxJava-绝对是AsyncTasks等绝大多数类最好的替代品；（参考文章：Party-tricks-with-RxJava-RxAndroid-amp-Retrolambda）"><span class="nav-number">5.</span> <span class="nav-text">5.RxJava 绝对是AsyncTasks等绝大多数类最好的替代品；（参考文章：Party tricks with RxJava, RxAndroid & Retrolambda）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-Retrofit-是最优秀的网络框架；（没有之一）"><span class="nav-number">6.</span> <span class="nav-text">6.Retrofit 是最优秀的网络框架；（没有之一）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-使用-Retrolambda-缩减你的代码；"><span class="nav-number">7.</span> <span class="nav-text">7.使用 Retrolambda 缩减你的代码；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-感受RxJava与Retrofit和Retrolambda一起使用的魅力；（参考文章：参考文章：Party-tricks-with-RxJava-RxAndroid-amp-Retrolambda）"><span class="nav-number">8.</span> <span class="nav-text">8.感受RxJava与Retrofit和Retrolambda一起使用的魅力；（参考文章：参考文章：Party tricks with RxJava, RxAndroid & Retrolambda）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-我使用-EventBus-，它很强大，但我不会过度使用，因为它会使代码库会变得很杂乱无章；"><span class="nav-number">9.</span> <span class="nav-text">9.我使用 EventBus ，它很强大，但我不会过度使用，因为它会使代码库会变得很杂乱无章；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-根据应用功能分包，而不是所属类别；（项目目录结构划分，参考文章：Package-by-features-not-layers）"><span class="nav-number">10.</span> <span class="nav-text">10.根据应用功能分包，而不是所属类别；（项目目录结构划分，参考文章：Package by features, not layers）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-移除-Application-线程里的一切代码；（避免拖慢应用的初始化和启动速度）"><span class="nav-number">11.</span> <span class="nav-text">11.移除 Application 线程里的一切代码；（避免拖慢应用的初始化和启动速度）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-使用-lint-优化布局，以便你能一眼识别出冗余的视图并移除；"><span class="nav-number">12.</span> <span class="nav-text">12.使用 lint 优化布局，以便你能一眼识别出冗余的视图并移除；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-如果你使用gradle，想尽一切办法加快编译速度；（参考文章：How-I-save-5h-week-on-Gradle-builds）"><span class="nav-number">13.</span> <span class="nav-text">13.如果你使用gradle，想尽一切办法加快编译速度；（参考文章：How I save 5h/week on Gradle builds）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-使用-Profile-report-查看编译时间到底是在什么地方耗费的；"><span class="nav-number">14.</span> <span class="nav-text">14.使用 Profile report 查看编译时间到底是在什么地方耗费的；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-尽量使用众所周知的成熟架构体系；（参考文章：Architecting-Android…The-evolution）"><span class="nav-number">15.</span> <span class="nav-text">15.尽量使用众所周知的成熟架构体系；（参考文章：Architecting Android…The evolution）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-测试消耗时间，但是一旦你掌握了测试的窍门就会发现，它比没有经过测试的代码更快更稳妥；（参考地址：http-stackoverflow-com-questions-67299-is-unit-testing-worth-the-effort-67500-67500"><span class="nav-number">16.</span> <span class="nav-text">16.测试消耗时间，但是一旦你掌握了测试的窍门就会发现，它比没有经过测试的代码更快更稳妥；（参考地址：http://stackoverflow.com/questions/67299/is-unit-testing-worth-the-effort/67500#67500)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-使用依赖注入使你的应用更加模块化，并且更容易测试；（参考文章：Tasting-Dagger-2-on-Android）"><span class="nav-number">17.</span> <span class="nav-text">17.使用依赖注入使你的应用更加模块化，并且更容易测试；（参考文章：Tasting Dagger 2 on Android）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18-关注-Fragmened-Podcast-对你大有帮助；（Fragmented，一个专属安卓开发者的播客网站）"><span class="nav-number">18.</span> <span class="nav-text">18.关注 Fragmened Podcast 对你大有帮助；（Fragmented，一个专属安卓开发者的播客网站）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-永远不要使用私人邮箱作为安卓市场的发布者账号；（主要是Google-Play，案例参考：https-www-reddit-com-r-Android-comments-2hywu9-google-play-only-one-strike-is-needed-to-ruin-you-）"><span class="nav-number">19.</span> <span class="nav-text">19.永远不要使用私人邮箱作为安卓市场的发布者账号；（主要是Google Play，案例参考：https://www.reddit.com/r/Android/comments/2hywu9/google_play_only_one_strike_is_needed_to_ruin_you/）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#20-坚持使用合适的输入类型；（针对输入框，参考链接：Specifying-the-Input-Method-Type）"><span class="nav-number">20.</span> <span class="nav-text">20.坚持使用合适的输入类型；（针对输入框，参考链接：Specifying the Input Method Type）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#21-学会借助分析学寻找通用模式和孤立问题；（设计模式，封装等）"><span class="nav-number">21.</span> <span class="nav-text">21.学会借助分析学寻找通用模式和孤立问题；（设计模式，封装等）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-保持学习最新开源类库，并借助-dryrun-工具测试开源类库；（Android-Arsenal-，一个搜索整合Android开源类库的网站）"><span class="nav-number">22.</span> <span class="nav-text">22.保持学习最新开源类库，并借助 dryrun 工具测试开源类库；（Android Arsenal ，一个搜索整合Android开源类库的网站）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23-Service服务应该做它们需要做的事情，并且尽可能快地终止；"><span class="nav-number">23.</span> <span class="nav-text">23.Service服务应该做它们需要做的事情，并且尽可能快地终止；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24-使用-Account-Manager-提示用户名和邮箱地址；"><span class="nav-number">24.</span> <span class="nav-text">24.使用 Account Manager 提示用户名和邮箱地址；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#25-使用CI-持续集成-编译构建测试版和发布版应用；"><span class="nav-number">25.</span> <span class="nav-text">25.使用CI(持续集成)编译构建测试版和发布版应用；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26-不要运行你自己的-CI-server，防止-SSL-攻击而造成的磁盘空间、安全问题、服务更新都需要维持-server-，这是一件耗费时间的任务。使用circleci、travis-和-shippable，相比而言，性价比更高，更可靠；"><span class="nav-number">26.</span> <span class="nav-text">26.不要运行你自己的 CI server，防止 SSL 攻击而造成的磁盘空间、安全问题、服务更新都需要维持 server ，这是一件耗费时间的任务。使用circleci、travis 和 shippable，相比而言，性价比更高，更可靠；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#27-使用-gradle-play-publisher-自动部署上传Apk文件等信息到应用商店；"><span class="nav-number">27.</span> <span class="nav-text">27.使用 gradle-play-publisher 自动部署上传Apk文件等信息到应用商店；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#28-如果一个library比较大，而你只是用到其中的一小部分功能，那么你就应该寻找一个更小的替代品；（比如可以借助-proguard-工具）"><span class="nav-number">28.</span> <span class="nav-text">28.如果一个library比较大，而你只是用到其中的一小部分功能，那么你就应该寻找一个更小的替代品；（比如可以借助 proguard 工具）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#29-不要大量使用超出你实际需要的依赖库。特别是当这些依赖库不是经常在变时，我们就要考虑到，这些类库从头编译（-CI-Builds-就是一个很好的例子）或者检查之前编译好的独立类库是否需要更新所花费的时间相比简单地加载jar或者aar这样的二进制文件，高达四倍之多；"><span class="nav-number">29.</span> <span class="nav-text">29.不要大量使用超出你实际需要的依赖库。特别是当这些依赖库不是经常在变时，我们就要考虑到，这些类库从头编译（ CI Builds 就是一个很好的例子）或者检查之前编译好的独立类库是否需要更新所花费的时间相比简单地加载jar或者aar这样的二进制文件，高达四倍之多；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#30-开始考虑使用-SVG-代替-PNG-格式的图片；（参考地址：Add-Multi-Density-Vector-Graphics）"><span class="nav-number">30.</span> <span class="nav-text">30.开始考虑使用 SVG 代替 PNG 格式的图片；（参考地址：Add Multi-Density Vector Graphics）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#31-封装抽象化-library-的使用，这样当你需要使用新的-library-替代旧-library-时就会变得很容易；"><span class="nav-number">31.</span> <span class="nav-text">31.封装抽象化 library 的使用，这样当你需要使用新的 library 替代旧 library 时就会变得很容易；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#32-监听网络连接变化和连接类型（Wifi状态下数据更新更频繁？）；"><span class="nav-number">32.</span> <span class="nav-text">32.监听网络连接变化和连接类型（Wifi状态下数据更新更频繁？）；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#33-监听电源和电池电量变化（充电时数据更新更频繁？电池电量不足时暂停更新？）；"><span class="nav-number">33.</span> <span class="nav-text">33.监听电源和电池电量变化（充电时数据更新更频繁？电池电量不足时暂停更新？）；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#34-展现给用户的UI就像一个笑话，如果你不得不解释一下的话，它就不是一个好笑话；"><span class="nav-number">34.</span> <span class="nav-text">34.展现给用户的UI就像一个笑话，如果你不得不解释一下的话，它就不是一个好笑话；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#35-性能测试很重要：Coding-实现慢，但要正确，然后验证优化，这不会影响任何测试内容。"><span class="nav-number">35.</span> <span class="nav-text">35.性能测试很重要：Coding 实现慢，但要正确，然后验证优化，这不会影响任何测试内容。</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dino</span>
+</div>
+
+<!--
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+-->
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"dinomonster"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("8qm7vzCs0YAgf2tnqzt4ODts-gzGzoHsz", "FHqdtTG6DkUcj659EdD0LHd4");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
